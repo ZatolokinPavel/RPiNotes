@@ -1,4 +1,7 @@
-http://www.devdungeon.com/content/setting-tor-proxy-and-hidden-services-linux
+http://www.devdungeon.com/content/setting-tor-proxy-and-hidden-services-linux  
+http://help.ubuntu.ru/wiki/tor  
+Тут про установку на Raspberry Pi  
+https://tor.stackexchange.com/questions/242/how-to-run-tor-on-raspbian-on-the-raspberry-pi
 
 ### Установка
 `sudo apt-get install tor`  
@@ -22,4 +25,5 @@ systemctl restart tor
 ```
 
 ### Проверка соединения на локальной машине
-`curl --socks5-hostname localhost:9050 https://check.torproject.org`
+`curl --socks5-hostname localhost:9050 https://check.torproject.org`  
+На винде проверять будем, открыв адрес `https://check.torproject.org/`
