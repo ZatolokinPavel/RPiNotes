@@ -14,7 +14,7 @@ https://tor.stackexchange.com/questions/242/how-to-run-tor-on-raspbian-on-the-ra
 `sudo apt-get autoclean`
 
 ### Установка
-Так можно легко и быстро установить старую версию тора. Но она очень стара. Чуть ли не 2013 года. `sudo apt-get install tor`  
+Так можно легко и быстро установить старую версию тора 0.2.5.12-4. Но она очень стара. Чуть ли не 2013 года. `sudo apt-get install tor`  
 
 
 ### Настройка
