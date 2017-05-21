@@ -34,13 +34,14 @@ make
 ```
 
 ### Настройка
-Просмотр/изменение конфигурации  
-`sudo vim /etc/tor/torrc`
+Файл конфигурации находитя в одном из этих мест, смотря как устанавливали:  
+`/etc/tor/torrc`  
+`/usr/local/etc/tor/torrc`
 
-You can change the default port, or specify multiple IP addresses and ports for binding.
+Для начала нужно раскомментировать эти строчки и подставить туда свой IP
 ```
-SOCKSPort 9050 # Default
-SOCKSPort 10.10.1.23:9999 # Bind to specific IP/port
+SOCKSPort 9050 # для лакальных подключений
+SOCKSPort 192.168.x.x:9100 # для подключения с других компьютеров как через прокси (тут ip компа с тором)
 ```
 
 ### Запуск
