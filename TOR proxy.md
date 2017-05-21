@@ -16,10 +16,12 @@ https://tor.stackexchange.com/questions/242/how-to-run-tor-on-raspbian-on-the-ra
 Скачать исходники тут https://www.torproject.org/download/download.html.en#source (Source Tarball)  
 Кидаем архив в какую-то папку, переходим туда, распаковываем архив и собираем его  
 ```bash
+sudo apt-get install libevent-dev
 tar -xvzf tor-0.3.0.7.tar.gz
 cd tor-0.3.0.7/
 ./configure
-
+make
+sudo make install
 ```
 
 ### Настройка
