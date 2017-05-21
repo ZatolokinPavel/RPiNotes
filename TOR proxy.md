@@ -1,7 +1,9 @@
 http://www.devdungeon.com/content/setting-tor-proxy-and-hidden-services-linux  
 http://help.ubuntu.ru/wiki/tor  
 Тут про установку на Raspberry Pi  
-https://tor.stackexchange.com/questions/242/how-to-run-tor-on-raspbian-on-the-raspberry-pi
+https://tor.stackexchange.com/questions/242/how-to-run-tor-on-raspbian-on-the-raspberry-pi  
+Предлагали ещё использовать tun2socks в связке с тором, но пока врядли.  
+https://code.google.com/archive/p/badvpn/wikis/tun2socks.wiki
 
 ### Удаление старой версии
 Нет, конечно же тора нет в предустановленных программах. Просто я уже накосячил и установил старую версию из репозитория по умолчанию. А она там не обновлялась несколько лет. Поэтому хотелось бы самую свежую версию.
