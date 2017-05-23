@@ -64,3 +64,9 @@ systemctl restart tor
 ### Проверка соединения на локальной машине
 `curl --socks5-hostname localhost:9050 https://check.torproject.org`  
 На винде проверять будем, открыв адрес `https://check.torproject.org/`
+
+### IPTables
+`sudo iptables -t nat -L --line-numbers` посмотреть правила
+`sudo iptables -t nat -S` тоже посмотреть но в другом виде
+`sudo iptables -t nat -A PREROUTING -p tcp -s 192.168.1.2 --dport 80 -j REDIRECT --to-port 8123` добавить правило
+`sudo iptables -t nat -D PREROUTING 1` удалить правило
