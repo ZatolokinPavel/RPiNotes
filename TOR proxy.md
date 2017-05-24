@@ -47,11 +47,20 @@ make
 ```
 SOCKSPort 9050              # для лакальных подключений
 SOCKSPort 192.168.x.x:9050  # для подключения с других компьютеров через SOCKS-прокси (тут ip RPi)
+
+SOCKSPolicy accept 127.0.0.1
+SOCKSPolicy accept 192.168.0.0/16   # по необходимости
+SOCKSPolicy reject *
 ```
-И добавляем вот эти настройки:
+И, при необходимости, добавляем вот эти настройки. Хотя при использовании polipo они не нужны.
 ```
 ClientOnly 1                # так, на всякий случай
+TransPort 9100              # для локальных подключений
 TransPort 192.168.x.x:9100  # для подключения с других компьютеров через transparent-прокси (тут ip RPi)
+DNSPort 9053
+DNSListenAddress 127.0.0.1
+VirtualAddrNetwork 10.254.0.0/16  # виртуальные адреса для .onion ресурсов
+AutomapHostsOnResolve 1     # не разобрался что это
 ```
 
 ### Запуск
