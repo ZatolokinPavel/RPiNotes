@@ -26,7 +26,7 @@ _Вариант похуже_
 ```
 authenticator = webroot
 webroot-path = /var/www/html
-post-hook = service nginx reload
+post-hook = service nginx -s reload
 text = True
 ```
 
