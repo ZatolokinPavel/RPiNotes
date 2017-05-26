@@ -41,4 +41,4 @@ location /.well-known {
 
 ### Регистрация в Let's Encrypt
 Регистрацию нужно сделать только один раз:  
-`certbot register --email me@example.com`
+`$ sudo certbot register --email me@example.com`
