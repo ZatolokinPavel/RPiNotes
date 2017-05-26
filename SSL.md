@@ -30,3 +30,4 @@ location /.well-known {
     root /var/www/html;
 }
 ```
+И папку `/var/www/html/.well-known/acme-challenge/` создать на диске. Права доступа можно оставить рутовые, так как Certbot, наверное, будет запускаться под рутом.
