@@ -7,13 +7,18 @@ https://habrahabr.ru/post/318952/
 https://certbot.eff.org/docs/using.html#certbot-command-line-options
 
 ### Установка Certbot
+_Вариант получше_  
+Подключить репозиторий Debian 9 Stretch (не знаю как) и установить этой командой:  
+`$ sudo apt-get update`  
+`$ sudo apt-get install certbot -t stretch`
+
+_Вариант похуже_  
 Описано тут: https://certbot.eff.org/#debianjessie-nginx  
 Сначала включаем репозиторий Jessie backports repo добавив строчку  
 `deb http://ftp.debian.org/debian jessie-backports main`  
 в файл **sources.list** (or add a new file with the ".list" extension to /etc/apt/sources.list.d/)  
-и обновив список пакетов `apt-get update`
-
-Теперь можно установить сам Certbot  
+Теперь можно обновить список пакетов и установить сам Certbot  
+`$ sudo apt-get update`  
 `$ sudo apt-get install certbot -t jessie-backports`
 
 ### Настройка
