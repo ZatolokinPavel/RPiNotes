@@ -41,4 +41,15 @@ location /.well-known {
 
 ### Регистрация в Let's Encrypt
 Регистрацию нужно сделать только один раз:  
-`$ sudo certbot register --email me@example.com`
+`$ sudo certbot register --email me@example.com`  
+После выполнения команды получим вот это сообщение:  
+```
+IMPORTANT NOTES:
+ - If you lose your account credentials, you can recover through
+   e-mails sent to me@example.com.
+ - Your account credentials have been saved in your Certbot
+   configuration directory at /etc/letsencrypt. You should make a
+   secure backup of this folder now. This configuration directory will
+   also contain certificates and private keys obtained by Certbot so
+   making regular backups of this folder is ideal.
+```
