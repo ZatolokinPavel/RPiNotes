@@ -2,7 +2,9 @@
 Настройка SSL для Nginx на Debian 8 (jessie) с использованием сертификатов Let's Encrypt  
 Источники:  
 https://certbot.eff.org/#debianjessie-nginx  
-https://habrahabr.ru/post/318952/
+https://habrahabr.ru/post/318952/  
+Описание опций команды certbot  
+https://certbot.eff.org/docs/using.html#certbot-command-line-options
 
 ### Установка Certbot
 Описано тут: https://certbot.eff.org/#debianjessie-nginx  
