@@ -53,3 +53,8 @@ IMPORTANT NOTES:
    also contain certificates and private keys obtained by Certbot so
    making regular backups of this folder is ideal.
 ```
+
+### Пробное получение сертификата
+У Let's Encrypt есть лимиты на количество обращений за сертификатами, потому сначала попробуем получить необходимый сертификат в режиме для тестов:  
+`certbot certonly --dry-run -d example.com -d www.example.com`  
+В конце программа должна отчитаться об успешной работе: `The dry run was successful.`
