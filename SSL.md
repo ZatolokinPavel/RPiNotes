@@ -56,5 +56,5 @@ IMPORTANT NOTES:
 
 ### Пробное получение сертификата
 У Let's Encrypt есть лимиты на количество обращений за сертификатами, потому сначала попробуем получить необходимый сертификат в режиме для тестов:  
-`certbot certonly --dry-run -d example.com -d www.example.com`  
+`$ sudo certbot certonly --dry-run -d example.com -d www.example.com`  
 В конце программа должна отчитаться об успешной работе: `The dry run was successful.`
