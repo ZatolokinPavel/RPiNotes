@@ -31,3 +31,7 @@ location /.well-known {
 }
 ```
 И папку `/var/www/html/.well-known/acme-challenge/` создать на диске. Права доступа можно оставить рутовые, так как Certbot, наверное, будет запускаться под рутом.
+
+### Регистрация в Let's Encrypt
+Регистрацию нужно сделать только один раз:
+`certbot register --email me@example.com`
