@@ -92,9 +92,9 @@ https://github.com/ambrop72/badvpn/wiki/Tun2socks
 `sudo apt-get update`  
 `sudo apt-get install cmake -t stretch`  
 Скачать весь badvpn  
-`git clone https://github.com/ambrop72/badvpn.git`
+`git clone https://github.com/ambrop72/badvpn.git`  
 Теперь собрать из всего badvpn только tun2socks  
-```
+```bash
 mkdir badvpn-build
 cd badvpn-build
 cmake /path/to/badvpn -DBUILD_NOTHING_BY_DEFAULT=1 -DBUILD_TUN2SOCKS=1
