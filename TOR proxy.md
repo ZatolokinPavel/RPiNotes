@@ -108,3 +108,7 @@ make
 -- Installing: /usr/local/bin/badvpn-tun2socks
 -- Installing: /usr/local/share/man/man8/badvpn-tun2socks.8
 ```
+
+### Настройка tun2socks
+Запускаем tun2socks:
+`badvpn-tun2socks --tundev tun0 --netif-ipaddr 10.0.0.2 --netif-netmask 255.255.255.0 --socks-server-addr 127.0.0.1:9050`
