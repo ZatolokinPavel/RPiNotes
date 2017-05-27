@@ -110,5 +110,5 @@ make
 ```
 
 ### Настройка tun2socks
-Запускаем tun2socks:
-`badvpn-tun2socks --tundev tun0 --netif-ipaddr 10.0.0.2 --netif-netmask 255.255.255.0 --socks-server-addr 127.0.0.1:9050`
+Запускаем tun2socks:  
+`sudo badvpn-tun2socks --tundev tun0 --netif-ipaddr 10.0.0.2 --netif-netmask 255.255.255.0 --socks-server-addr 127.0.0.1:9050`
