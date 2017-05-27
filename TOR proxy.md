@@ -100,3 +100,11 @@ cd badvpn-build
 cmake /path/to/badvpn -DBUILD_NOTHING_BY_DEFAULT=1 -DBUILD_TUN2SOCKS=1
 make
 ```
+И пробуем установить  
+`sudo make install`  
+установится вот сюда:  
+```
+-- Installing: /usr/local/share/man/man7/badvpn.7
+-- Installing: /usr/local/bin/badvpn-tun2socks
+-- Installing: /usr/local/share/man/man8/badvpn-tun2socks.8
+```
