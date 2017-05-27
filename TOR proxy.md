@@ -90,7 +90,7 @@ systemctl restart tor
 https://github.com/ambrop72/badvpn/wiki/Tun2socks  
 Установить утилиту CMake для настройки сборки tun2socks (около 20 мегабайт)  
 `sudo apt-get update`  
-`sudo apt-get install cmake -t stretch`  
+`sudo apt-get install cmake`  
 Скачать весь badvpn  
 `git clone https://github.com/ambrop72/badvpn.git`  
 Теперь собрать из всего badvpn только tun2socks  
