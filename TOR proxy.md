@@ -85,3 +85,18 @@ systemctl restart tor
 `sudo iptables -t nat -S` тоже посмотреть но в другом виде  
 `sudo iptables -t nat -A PREROUTING -p tcp -s 192.168.1.2 --dport 80 -j REDIRECT --to-port 8123` добавить правило  
 `sudo iptables -t nat -D PREROUTING 1` удалить правило  
+
+### Установка tun2socks
+https://github.com/ambrop72/badvpn/wiki/Tun2socks  
+Установить утилиту CMake для настройки сборки tun2socks (около 20 мегабайт)  
+`sudo apt-get update`  
+`sudo apt-get install cmake -t stretch`  
+Скачать весь badvpn  
+`git clone https://github.com/ambrop72/badvpn.git`
+Теперь собрать из всего badvpn только tun2socks  
+```
+mkdir badvpn-build
+cd badvpn-build
+cmake /path/to/badvpn -DBUILD_NOTHING_BY_DEFAULT=1 -DBUILD_TUN2SOCKS=1
+make
+```
