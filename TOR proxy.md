@@ -123,4 +123,7 @@ make
 sudo iptables -A FORWARD -i eth0 -o tun0 -j ACCEPT
 sudo iptables -A FORWARD -i tun0 -o eth0 -m state --state ESTABLISHED,RELATED -j ACCEPT
 sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+iptables -t nat -A PREROUTING -i eth0 --dport 80 -j DNAT --to-destination 10.0.0.2:80
+iptables -t nat -A POSTROUTING -d 10.0.0.2 --dport 80 -j MASQUERADE
 ```
