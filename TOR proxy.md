@@ -109,11 +109,13 @@ make
 -- Installing: /usr/local/share/man/man8/badvpn-tun2socks.8
 ```
 
-### Настройка tun2socks
+### Запуск tun2socks
 Запускаем tun2socks:  
 `sudo badvpn-tun2socks --tundev tun0 --netif-ipaddr 10.0.0.2 --netif-netmask 255.255.255.0 --socks-server-addr 127.0.0.1:9050`  
 Смотрим, возможно в другой консоли, появился ли адаптер tun0:  
-`ip link show`
+`ip link show`  
+Проверяем работоспособность интерфейса:  
+`curl --interface tun0 https://check.torproject.org/`
 
 ### Перенаправление трафика на tun2socks
 Пока что перенаправляем весь трафик.  
