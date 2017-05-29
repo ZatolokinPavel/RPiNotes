@@ -111,4 +111,16 @@ make
 
 ### Настройка tun2socks
 Запускаем tun2socks:  
-`sudo badvpn-tun2socks --tundev tun0 --netif-ipaddr 10.0.0.2 --netif-netmask 255.255.255.0 --socks-server-addr 127.0.0.1:9050`
+`sudo badvpn-tun2socks --tundev tun0 --netif-ipaddr 10.0.0.2 --netif-netmask 255.255.255.0 --socks-server-addr 127.0.0.1:9050`  
+Смотрим, возможно в другой консоли, появился ли адаптер tun0:  
+`ip link show`
+
+### Перенаправление трафика на tun2socks
+Пока что перенаправляем весь трафик.  
+На Raspberry Pi добавляем такие правила в iptables:
+```bash
+echo 1 > /proc/sys/net/ipv4/ip_forward
+iptables -A FORWARD -i eth0 -o tun0 -j ACCEPT
+iptables -A FORWARD -i tun0 -o eth0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+```
