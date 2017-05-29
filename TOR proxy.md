@@ -117,9 +117,9 @@ make
 
 ### Перенаправление трафика на tun2socks
 Пока что перенаправляем весь трафик.  
-На Raspberry Pi добавляем такие правила в iptables:
+Сначала нужно разрешить перенаправление в системе. Для этого нужно добавить строчку `net.ipv4.ip_forward=1` в файл `/etc/sysctl.conf` после чего перезагрузить Raspberry Pi.  
+Теперь на Raspberry Pi добавляем такие правила в iptables:
 ```bash
-sudo echo 1 > /proc/sys/net/ipv4/ip_forward
 sudo iptables -A FORWARD -i eth0 -o tun0 -j ACCEPT
 sudo iptables -A FORWARD -i tun0 -o eth0 -m state --state ESTABLISHED,RELATED -j ACCEPT
 sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
