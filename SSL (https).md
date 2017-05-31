@@ -68,3 +68,7 @@ IMPORTANT NOTES:
 42 */12 * * * certbot renew --quiet --allow-subset-of-names
 ```
 Если были ещё дополнительные команды в этом кроне, то их оставляем.
+
+### Проверка сертификата
+Можно проверить полученный сертификат. Как минимум, посмотреть его срок годности.  
+`sudo openssl x509 -text -in /etc/letsencrypt/live/example.com/cert.pem`
