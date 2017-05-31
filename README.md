@@ -4,16 +4,16 @@ _Заметки и инструкции по настройке Raspberry Pi_
 ## План
 1. Установить операционную систему Raspbian Jessie Lite. А именно: скачать с [офф. сайта](https://www.raspberrypi.org/downloads/raspbian/), записать на флешку с помощью **Win32DiskImager**, запустить на малине. Логин/пароль по умолчанию `pi` `raspberry`.
 2. Настроить раскладку клавиатуры и язык системы.
-3. Настроить через утилиту `sudo raspi-config`
+3. Настроить через утилиту `sudo raspi-config`.
 4. Хорошо бы настроить пользователей системы, но пока не знаю как.
 5. Настроить SSH доступ и локальную сеть.
 6. Установить и настроить Samba для создания общей папки.
 7. Установить и настроить Nginx.
 8. [Настроить SSL для Nginx (https).](https://github.com/ZatolokinPavel/RPiNotes/blob/master/SSL%20(https).md)
-9. Скачать сайт okfilm.com.ua и подключить его к Nginx.
-10. [Установить и настроить Erlang](https://github.com/ZatolokinPavel/RPiNotes/blob/master/Erlang.md)
-11. [Скачать и запустить backend на эрланге](https://github.com/ZatolokinPavel/raspberry_server)
-12. [Настроить систему проксирования на основе Tor](https://github.com/ZatolokinPavel/RPiNotes/blob/master/TOR%20proxy.md)
+9. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm)
+10. [Установить и настроить Erlang.](https://github.com/ZatolokinPavel/RPiNotes/blob/master/Erlang.md)
+11. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
+12. [Настроить систему проксирования на основе Tor.](https://github.com/ZatolokinPavel/RPiNotes/blob/master/TOR%20proxy.md)
 
 ### Раскладка клавиатуры и локализация консоли
 Взято отсюда http://blackdiver.net/it/linux/777  
