@@ -5,16 +5,17 @@ _Заметки и инструкции по настройке Raspberry Pi_
 1. Установить операционную систему Raspbian Jessie Lite. А именно: скачать с [офф. сайта](https://www.raspberrypi.org/downloads/raspbian/), записать на флешку с помощью **Win32DiskImager**, запустить на малине. Логин/пароль по умолчанию `pi` `raspberry`.
 2. Настроить раскладку клавиатуры и язык системы. [(см. ниже)](#Раскладка-клавиатуры-и-локализация-консоли)
 3. Настроить через утилиту `sudo raspi-config`. [(см. ниже)](#Начальная-настройка)
-4. Обновить всё что только можно [(см. ниже)](#Обновление)
-4. Хорошо бы настроить пользователей системы, но пока не знаю как.
-5. Настроить SSH доступ и локальную сеть.
-6. Установить и настроить Samba для создания общей папки.
-7. Установить и настроить Nginx.
-8. [Настроить SSL для Nginx (https).](https://github.com/ZatolokinPavel/RPiNotes/blob/master/SSL%20(https).md)
-9. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm)
-10. [Установить и настроить Erlang.](https://github.com/ZatolokinPavel/RPiNotes/blob/master/Erlang.md)
-11. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
-12. [Настроить систему проксирования на основе Tor.](https://github.com/ZatolokinPavel/RPiNotes/blob/master/TOR%20proxy.md)
+4. Отключить скринсейвер. [(см. ниже)](#Отключение-скринсейвера)
+5. Обновить всё что только можно [(см. ниже)](#Обновление)
+6. Хорошо бы настроить пользователей системы, но пока не знаю как.
+7. Настроить SSH доступ и локальную сеть.
+8. Установить и настроить Samba для создания общей папки.
+9. Установить и настроить Nginx.
+10. [Настроить SSL для Nginx (https).](https://github.com/ZatolokinPavel/RPiNotes/blob/master/SSL%20(https).md)
+11. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm)
+12. [Установить и настроить Erlang.](https://github.com/ZatolokinPavel/RPiNotes/blob/master/Erlang.md)
+13. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
+14. [Настроить систему проксирования на основе Tor.](https://github.com/ZatolokinPavel/RPiNotes/blob/master/TOR%20proxy.md)
 
 ### Раскладка клавиатуры и локализация консоли
 Взято отсюда http://blackdiver.net/it/linux/777  
@@ -65,6 +66,18 @@ _Заметки и инструкции по настройке Raspberry Pi_
 
 ### Установка пароля пользователю 'root' в Raspberry Pi
 Набрать в консоли команду `sudo passwd root` и ввести пароль дважды.
+
+### Отключение скринсейвера
+При подключении монитора напрямую (не по SSH) если долго не нажимать ничего на клавиатуре, то монитор становится черным. Это мешает и надо отключить. Для этого нужно изменить настройки в файле /etc/kbd/config  
+`$ sudo vim.tiny /etc/kbd/config` (а нормального **vim**'а ещё и нету, как и **mc**)
+```
+BLANK_TIME=0
+POWERDOWN_TIME=0
+BLANK_DPMS=off
+LEDS=+num            # заодно включить по умолчанию Num Lock
+DO_VCSTIME=yes       # заодно отображать часы в верхнем правом углу консоли
+```
+`sudo reboot`
 
 ### Обновление
 https://www.raspberrypi.org/documentation/raspbian/updating.md  
