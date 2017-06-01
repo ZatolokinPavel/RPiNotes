@@ -86,6 +86,7 @@ https://www.raspberrypi.org/documentation/raspbian/updating.md
 `$ sudo apt-get dist-upgrade`  
 `$ sudo apt-get upgrade` – обновление всех установленных пакетов  
 Затем обновить прошивку  
+`$ sudo apt-get install rpi-update` – программы обновления прошивки может и не быть  
 `$ sudo rpi-update` – обновление прошивки  
 `$ sudo reboot` – теперь надо перезагрузить  
 Чистка  
