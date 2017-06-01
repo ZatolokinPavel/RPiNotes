@@ -67,7 +67,7 @@ _Заметки и инструкции по настройке Raspberry Pi_
 Набрать в консоли команду `sudo passwd root` и ввести пароль дважды.
 
 ### Обновление
-https://www.raspberrypi.org/documentation/raspbian/updating.md
+https://www.raspberrypi.org/documentation/raspbian/updating.md  
 Нужно обновить все программы  
 `$ sudo apt-get update` – обновить информацию о пакетах  
 `$ sudo apt-get dist-upgrade`  
