@@ -96,3 +96,6 @@ https://www.raspberrypi.org/documentation/raspbian/updating.md
 `$ sudo apt-get autoclean` – почистить пакеты .deb которые больше не используются
 
 ### Установка необходимого минимума программ
+`sudo apt-get install vim`  
+`sudo apt-get install mc`  
+`sudo apt-get install htop`  
