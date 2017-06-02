@@ -22,33 +22,33 @@ HostKey /etc/ssh/ssh_host_dsa_key
 HostKey /etc/ssh/ssh_host_ecdsa_key
 HostKey /etc/ssh/ssh_host_ed25519_key
 #Privilege Separation is turned on for security
-UsePrivilegeSeparation yes      # разделение привилегий процессов
+UsePrivilegeSeparation yes      # разделение привилегий процессов для предотвращения превышения прав доступа
 
 # Lifetime and size временного серверного ключа протокола SSH-1
 #KeyRegenerationInterval 3600
 #ServerKeyBits 1024
 
 # Logging
-SyslogFacility AUTH
-LogLevel INFO
+SyslogFacility AUTH         # список каких событий будет записан в лог (/var/log/auth)
+LogLevel INFO               # уровень детализации событий лога
 
 # Authentication:
 LoginGraceTime 20           # время ожидания авторизации = 20 сек
 MaxStartups 10:30:20        # кол-во неавторизованных подключений (start:rate:full)
 PermitRootLogin no          # запрещено заходить под рутом (пользуйтесь sudo)
 PermitEmptyPasswords no     # пустые пароли запрещены
-StrictModes yes
+StrictModes yes             # проверка прав и владение домашним каталогом пользователя
 AllowUsers pi               # по ssh разрешено заходить ТОЛЬКО пользователю 'pi'
 
 RhostsAuthentication no     # небезопасная rhosts аутентификация запрещена
-RSAAuthentication yes
+RSAAuthentication yes       # аутентификация RSA
 PubkeyAuthentication yes    # аутентификация по открытому ключу
 AuthorizedKeysFile	%h/.ssh/authorized_keys  # тут хранятся публичные ключи для пользователя
 
 IgnoreRhosts yes            # Don't read the user's ~/.rhosts and ~/.shosts files
 RhostsRSAAuthentication no  # For this to work you will also need host keys in /etc/ssh_known_hosts
 HostbasedAuthentication no  # similar for protocol version 2
-IgnoreUserKnownHosts yes    # don't trust ~/.ssh/known_hosts for RhostsRSAAuthentication
+#IgnoreUserKnownHosts yes   # don't trust ~/.ssh/known_hosts for RhostsRSAAuthentication
 
 # Change to yes to enable challenge-response passwords (beware issues with
 # some PAM modules and threads)
