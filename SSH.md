@@ -94,3 +94,10 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 # В общем, запустить sshd можно будет только от имени root.
 UsePAM yes
 ```
+
+### Дополнительные ссылки
+Памятка пользователям ssh. О, тут много интересного, что можно сделать с помощью SSH!  
+https://habrahabr.ru/post/122445/
+
+21 способ обеспечения безопасности OpenSS. Всё по настроечному файлу оттуда я использовал.  
+http://ubuntovod.ru/instructions/21-sposob-zashity-openssh.html
