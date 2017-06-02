@@ -40,7 +40,7 @@ PermitEmptyPasswords no     # пустые пароли запрещены
 StrictModes yes             # проверка прав и владение домашним каталогом пользователя
 AllowUsers pi               # по ssh разрешено заходить ТОЛЬКО пользователю 'pi'
 
-RhostsAuthentication no     # небезопасная rhosts аутентификация запрещена
+#RhostsAuthentication no     # небезопасная rhosts аутентификация запрещена (опция устарела)
 RSAAuthentication yes       # аутентификация RSA
 PubkeyAuthentication yes    # аутентификация по открытому ключу
 AuthorizedKeysFile	%h/.ssh/authorized_keys  # тут хранятся публичные ключи для пользователя
