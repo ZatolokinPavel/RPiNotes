@@ -22,7 +22,7 @@ HostKey /etc/ssh/ssh_host_dsa_key
 HostKey /etc/ssh/ssh_host_ecdsa_key
 HostKey /etc/ssh/ssh_host_ed25519_key
 #Privilege Separation is turned on for security
-UsePrivilegeSeparation yes      # разделение привилегий процессов для предотвращения превышения прав доступа
+UsePrivilegeSeparation yes      # разделение привилегий процессов чтобы не превышали права доступа
 
 # Lifetime and size временного серверного ключа протокола SSH-1
 #KeyRegenerationInterval 3600
@@ -94,6 +94,29 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 # В общем, запустить sshd можно будет только от имени root.
 UsePAM yes
 ```
+
+### Сертификаты для SSH
+Сгенерировать пару публичный + приватный ключ командой  
+`ssh-keygen -t rsa -b 4096`
+
+> Преобразовывать приватный ключ в формат PKCS#8 не стоит. Всё равно PuTTY не поддерживает его. Но, если что, команда вот:   
+> `openssl pkcs8 -topk8 -v2 des3 -in ~/.ssh/id_rsa.old -out ~/.ssh/id_rsa`
+
+Публичный ключ скопировать в файл `~/.ssh/authorized_keys`  
+Права при этом задаются такие:
+
+* на папку `.ssh/` нужны права 700
+* на все что в ней — 600.
+
+В конфиге демона SSH (/etc/ssh/sshd_config) раскомментировать строку  
+`AuthorizedKeysFile	%h/.ssh/authorized_keys`
+
+Перезапустить демон SSH командой `sudo service ssh restart`
+
+Приватный ключ скопировать на флешку и подставить в программу для доступа по SSH. Для putty придётся сконвертировать ключ в её формат с помощью утилиты **Putty Key Generator (puttygen)**, меню _Conversions -> Import key_.
+
+Проверить работу по ключу, после чего запретить авторизацию по паролю в конфиге демона SSH:  
+`PasswordAuthentication no`
 
 ### Дополнительные ссылки
 Памятка пользователям ssh. О, тут много интересного, что можно сделать с помощью SSH!  
