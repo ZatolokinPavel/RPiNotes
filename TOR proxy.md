@@ -135,3 +135,22 @@ sudo iptables -t nat -A POSTROUTING -d 10.0.0.2 -j MASQUERADE
 Домашняя страница проекта http://darkk.net.ru/redsocks/  
 Самая последняя версия - 0.5  
 `sudo apt-get install redsocks -t stretch`
+
+### Настройка redsocks
+`redsocks -h` - посмотреть справку
+`redsocks -v` - версия программы
+`redsocks -t` - протестировать файл конфигурации
+
+Файл конфигурации лежит тут: `/etc/redsocks.conf`.  
+Ниже я приведу те части конфига, которые нужно _изменить_. Они там уже есть, просто меняем значения.  
+```
+redsocks {
+        local_ip = 127.0.0.1;
+        local_port = 12345;
+
+        ip = 127.0.0.1;
+        port = 9050;
+
+        type = socks5;
+}
+```
