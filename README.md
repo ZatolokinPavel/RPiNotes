@@ -107,3 +107,5 @@ https://www.raspberrypi.org/documentation/raspbian/updating.md
 `deb http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rpi`  
 нужно просто добавить ещё и эту:  
 `deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi`  
+Сохранить файл и обновить информацию о пакетах  
+`$ sudo apt-get update`
