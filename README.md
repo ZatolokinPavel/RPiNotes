@@ -10,13 +10,14 @@ _Заметки и инструкции по настройке Raspberry Pi_
 6. Установка необходимого минимума программ [(см. ниже)](#Установка-необходимого-минимума-программ)
 6. Хорошо бы настроить пользователей системы, но пока не знаю как.
 7. [Настроить SSH доступ и локальную сеть.](SSH.md)
-8. Установить и настроить Samba для создания общей папки.
-9. Установить и настроить Nginx.
-10. [Настроить SSL для Nginx (https).](SSL%20(https).md)
-11. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm)
-12. [Установить и настроить Erlang.](Erlang.md)
-13. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
-14. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
+8. Добавить репозиторий **stretch**. [(см. ниже)](#Добавление-репозитория-stretch)
+9. Установить и настроить Samba для создания общей папки.
+10. Установить и настроить Nginx.
+11. [Настроить SSL для Nginx (https).](SSL%20(https).md)
+12. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm)
+13. [Установить и настроить Erlang.](Erlang.md)
+14. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
+15. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
 
 ### Раскладка клавиатуры и локализация консоли
 Взято отсюда http://blackdiver.net/it/linux/777  
@@ -99,3 +100,10 @@ https://www.raspberrypi.org/documentation/raspbian/updating.md
 `sudo apt-get install vim`  
 `sudo apt-get install mc`  
 `sudo apt-get install htop`  
+
+### Добавление репозитория stretch
+Этот репозиторий нужно добавить, чтобы из него ставить самые свежие версии пакетов с помощью apt-get. Это репозиторий будущей версии Debian. А текущая версия Debian - Jessie.  
+Итак, в файле `/etc/apt/source.list` уже есть строчка  
+`deb http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rpi`  
+нужно просто добавить ещё и эту:  
+`deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi`  
