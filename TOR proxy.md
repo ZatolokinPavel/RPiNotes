@@ -129,3 +129,9 @@ sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 9080 -j DNAT --to-destination 10.0.0.2:80
 sudo iptables -t nat -A POSTROUTING -d 10.0.0.2 -j MASQUERADE
 ```
+
+
+### Установка redsocks
+Домашняя страница проекта http://darkk.net.ru/redsocks/  
+Самая последняя версия - 0.5  
+`sudo apt-get install redsocks -t stretch`
