@@ -179,6 +179,7 @@ sudo iptables -t nat -A REDSOCKS -d 224.0.0.0/4 -j RETURN
 sudo iptables -t nat -A REDSOCKS -d 240.0.0.0/4 -j RETURN
 
 # Anything else should be redirected to port 12345
-sudo iptables -t nat -A REDSOCKS -p tcp -j REDIRECT --to-ports 12345
+#sudo iptables -t nat -A REDSOCKS -p tcp -j REDIRECT --to-ports 12345
+sudo iptables -t nat -A REDSOCKS -p tcp -j DNAT --to-destination 127.0.0.1:12345
 ```
 это ещё не всё.
