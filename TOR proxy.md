@@ -155,6 +155,14 @@ redsocks {
 }
 ```
 
+### Проверка redsocks
+Для этого нужно добавить пару правил в iptables  
+`sudo iptables -t nat -A OUTPUT -o eth0 -p tcp -m tcp --dport 80 -j DNAT --to-destination 127.0.0.1:12345`  
+`sudo iptables -t nat -A OUTPUT -o eth0 -p tcp -m tcp --dport 443 -j DNAT --to-destination 127.0.0.1:12345`  
+и проверить доступ через сеть tor  
+`curl https://check.torproject.org/`  
+_Взято тут: http://unixlab.blogspot.com/2012/04/transparent-proxy-on-linux-using.html_
+
 ### Добавление правил iptables для redsocks
 ```
 # Create new chain
