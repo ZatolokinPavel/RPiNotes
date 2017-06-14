@@ -100,7 +100,30 @@ server {
     # === всё остальное что тут было ===
 }
 ```
+И нужно сделать перенаправление с http на https версию сайта. Пока так, но это не самый лучший вариант.
+```nginx
+# Редирект с http на https
+server {
+    server_name okfilm.com.ua;
+    listen 80 default_server;
+    return 301 https://okfilm.com.ua$request_uri;
+}
+# Редирект с www на домен без www https
+server {
+    server_name www.okfilm.com.ua;
+    listen 80;
+    listen 443;
+    listen [::]:80;                 # IPv6 адрес:порт
+    return 301 https://okfilm.com.ua$request_uri;
+}
+```
 
-Делаем перенаправление с http на https версию сайта
-
-И восстанавливаем работу WebSocket
+### Исправление соединения WebSocket
+Если до этого на javascript соединение WebSocket устанавливалось такой командой:  
+`ws = new WebSocket("ws://"+location.host+"/ws/");`  
+то теперь это надо делать вот так:  
+```javascript
+var scheme = (window.location.protocol == 'https:') ? 'wss://' : 'ws://';
+var host = window.location.host;                    // хост и порт
+ws = new WebSocket(scheme+host+"/back/ws/");
+```
