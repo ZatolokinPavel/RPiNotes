@@ -72,3 +72,27 @@ IMPORTANT NOTES:
 ### Проверка сертификата
 Можно проверить полученный сертификат. Как минимум, посмотреть его срок годности.  
 `sudo openssl x509 -text -in /etc/letsencrypt/live/example.com/cert.pem`
+
+### Настройка Nginx
+Теперь осталось только переключить сайт на работу по https. Для этого в блоке **server** соответствующего сайта добавляем вот эти директивы:
+```nginx
+server {
+    # === server_name и listen которые уже были ===
+    listen                  443 ssl;
+    
+    ssl_certificate         "/etc/letsencrypt/live/okfilm.com.ua/fullchain.pem";
+    ssl_certificate_key     "/etc/letsencrypt/live/okfilm.com.ua/privkey.pem";
+    ssl_trusted_certificate "/etc/letsencrypt/live/okfilm.com.ua/chain.pem";
+    
+    ssl_stapling            on;     # прикрепление OCSP-ответов сервером
+    ssl_stapling_verify     on;     # проверка сервером ответов OCSP
+    resolver                127.0.0.1 8.8.8.8 ipv6=off;     # для преобразования имени хоста OCSP responder’а
+    
+    # исключим возврат на http-версию сайта
+    add_header Strict-Transport-Security "max-age=31536000";
+    # явно "сломаем" все картинки с http://
+    add_header Content-Security-Policy "block-all-mixed-content";
+    
+    # === всё остальное что тут было ===
+}
+```
