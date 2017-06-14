@@ -86,6 +86,7 @@ server {
     ssl_certificate         "/etc/letsencrypt/live/okfilm.com.ua/fullchain.pem";
     ssl_certificate_key     "/etc/letsencrypt/live/okfilm.com.ua/privkey.pem";
     ssl_trusted_certificate "/etc/letsencrypt/live/okfilm.com.ua/chain.pem";
+    ssl_ciphers             EECDH:+AES256:-3DES:RSA+AES:RSA+3DES:!NULL:!RC4;    # разрешённые шифры
     
     ssl_stapling            on;     # прикрепление OCSP-ответов сервером
     ssl_stapling_verify     on;     # проверка сервером ответов OCSP
@@ -99,3 +100,7 @@ server {
     # === всё остальное что тут было ===
 }
 ```
+
+Делаем перенаправление с http на https версию сайта
+
+И восстанавливаем работу WebSocket
