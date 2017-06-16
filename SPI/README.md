@@ -35,4 +35,5 @@ F0 0D
 
 Если ссылка не работает, то [вот копия этого файла](spidev_test_rpi.c).
 
-> А вообще предлагалось скачать общий для всех линуксов файл [spidev_test.c](https://github.com/torvalds/linux/blob/master/tools/spi/spidev_test.c) ([тут копия](spidev_test_torvalds.c)). В этом файле нужно было поменять device на "spidev0.0", потом скомпилить его `gcc spidev_test.c` и запустить `sudo ./a.out`. Но этот общий файл не сработал на Raspberry Pi.  
+> А вообще предлагалось скачать общий для всех линуксов файл [spidev_test.c](https://github.com/torvalds/linux/blob/master/tools/spi/spidev_test.c) ([тут копия](spidev_test_torvalds.c)). Этот файл нужно было скомпилить `gcc spidev_test.c` и запустить вот так:  
+> `sudo ./a.out -D /dev/spidev0.0 -v`  
