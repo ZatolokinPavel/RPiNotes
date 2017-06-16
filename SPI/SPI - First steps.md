@@ -5,4 +5,8 @@ http://www.brianhensley.net/2012/07/getting-spi-working-on-raspberry-pi.html
 
 ![ls /dev/](img/SPIdev.png "Результат команды ls /dev/")
 
-Теперь скачиваем файл [spidev_test.c](https://github.com/torvalds/linux/blob/master/tools/spi/spidev_test.c) на Raspberry Pi ([тут копия](spidev_test.c))
+Теперь скачиваем файл [spidev_test.c](https://github.com/torvalds/linux/blob/master/tools/spi/spidev_test.c) на Raspberry Pi ([тут копия](spidev_test.c)). В этом файле нужно поменять device на "spidev0.0". Потом скомпилить его `gcc spidev_test.c` и запустить `sudo ./a.out`  
+Результат если SPI работает:  
+![SPI работает, в результате много FF](img/spi_working.png "SPI работает")  
+И результат если SPI не работает:  
+![SPI не работает, в результате все 00](img/spi_not_working.png "SPI не работает")  
