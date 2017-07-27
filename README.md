@@ -100,6 +100,7 @@ https://www.raspberrypi.org/documentation/raspbian/updating.md
 `sudo apt-get install vim`  
 `sudo apt-get install mc`  
 `sudo apt-get install htop`  
+`sudo apt-get install ntpstat` - статус NTP, нужен для мониторилки сайта  
 
 ### Добавление репозитория stretch
 Этот репозиторий нужно добавить, чтобы из него ставить самые свежие версии пакетов с помощью apt-get. Это репозиторий будущей версии Debian. А текущая версия Debian - Jessie.  
