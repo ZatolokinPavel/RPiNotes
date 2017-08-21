@@ -2,7 +2,7 @@
 Samba – это файловый сервер. Он позволяет настроить доступ к файлам по сети.
 
 ### Установка  
-`sudo apt-get install samba samba-common-bin`  
+`sudo apt-get install samba samba-common-bin -t jessie`  
 
 ### Команды  
 Запуск, перезапуск и остановка производится стандартными командами  
