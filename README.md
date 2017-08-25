@@ -99,6 +99,7 @@ https://www.raspberrypi.org/documentation/raspbian/updating.md
 ### Установка необходимого минимума программ
 `sudo apt-get install vim`  
 `sudo apt-get install mc`  
+`sudo apt-get install git`  
 `sudo apt-get install htop`  
 `sudo apt-get install ntpstat` - статус NTP, нужен для мониторилки сайта  
 
