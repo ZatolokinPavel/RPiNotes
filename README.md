@@ -12,12 +12,13 @@ _Заметки и инструкции по настройке Raspberry Pi_
 8. [Настроить SSH доступ и локальную сеть.](SSH.md)
 9. [Установить и настроить Samba для создания общей папки.](Samba.md)
 10. Добавить репозиторий **stretch**. [(см. ниже)](#Добавление-репозитория-stretch)
-11. Установить и настроить Nginx.
-12. [Настроить SSL для Nginx (https).](SSL%20(https).md)
-13. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm)
-14. [Установить и настроить Erlang.](Erlang.md)
-15. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
-16. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
+11. [Настроить часы реального времени.](RTC.md)
+12. Установить и настроить Nginx.
+13. [Настроить SSL для Nginx (https).](SSL%20(https).md)
+14. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm)
+15. [Установить и настроить Erlang.](Erlang.md)
+16. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
+17. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
 
 ### Раскладка клавиатуры и локализация консоли
 Взято отсюда http://blackdiver.net/it/linux/777  
