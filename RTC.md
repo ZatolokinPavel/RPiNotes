@@ -1,4 +1,5 @@
 # Подключение часов реального времени
+![](/images/Tiny_RTC_DS1307_module.jpg "")  
 https://cdn-learn.adafruit.com/downloads/pdf/adding-a-real-time-clock-to-raspberry-pi.pdf  
 http://electromost.com/news/raspberry_pi_dlja_domashnej_avtomatizacii_chasy_realnogo_vremeni/2015-09-13-135  
 http://www.avislab.com/blog/bme280_ru/  
