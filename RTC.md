@@ -35,7 +35,32 @@ _Что касается логических уровней, то напряж�
    make
    sudo make check
    sudo make install
+   ```  
+4. **Готовим программу для переключения порта i2c-0**.  
+   Для этого где-нибудь в домашней папке нужно создать файл `i2c0.c` с таким содержимым:  
+   ```c
+   #include <bcm2835.h> 
+
+   #define BCM2835_GPIO_FSEL_INPT 0 
+   #define BCM2835_GPIO_FSEL_ALT0 4 
+
+   main() {
+       bcm2835_init(); 
+       bcm2835_gpio_fsel(0, BCM2835_GPIO_FSEL_INPT); 
+       bcm2835_gpio_fsel(1, BCM2835_GPIO_FSEL_INPT); 
+       bcm2835_gpio_fsel(28, BCM2835_GPIO_FSEL_INPT); 
+       bcm2835_gpio_fsel(29, BCM2835_GPIO_FSEL_INPT); 
+
+       bcm2835_gpio_fsel(28, BCM2835_GPIO_FSEL_ALT0); 
+       bcm2835_gpio_set_pud(28, BCM2835_GPIO_PUD_UP); 
+       bcm2835_gpio_fsel(29, BCM2835_GPIO_FSEL_ALT0); 
+       bcm2835_gpio_set_pud(29, BCM2835_GPIO_PUD_UP); 
+   }
    ```
+   It initialises the library, sets GPIO 0 and 1 as normal inputs (thus disabling their I2C function) and enables GPIO 28 and 29 as alternate function 0 (I2C bus), with pullup enabled.  
+   Далее нужно скомпилить его следующей командой  
+   `cc i2c0.c -o i2c0_remap -lbcm2835`  
+   и можно пробовать запускать: `./i2c0` (или, если надо, `sudo ./i2c0`)  
 5. **Добавляем переключение порта i2c-0 в автозагрузку**.  
    Для этого копируем файл `i2c0_remap` в каталог `/bin` и добавляем в файл `/etc/rc.local` до завершающей строки строки `exit 0` следующую строку:  
    `/bin/i2c0_remap # Remap i2c-0 port from S5 connector to P5 connector`  
