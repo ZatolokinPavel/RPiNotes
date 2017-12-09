@@ -26,7 +26,7 @@ https://martin-jones.com/2013/08/20/how-to-get-the-second-raspberry-pi-i2c-bus-t
    <img src="/images/Slanted_P5_header.jpg" height="150">
    <img src="/images/P5_header.jpg" height="150">
    <img src="/images/raspi_P5pinout.png" height="150" title="Вид снизу платы, клеммная колодка P1 слева">
-2. **Включаем i2c-0**. Для этого надо прописать строку `dtparam=i2c_vc=on` в файле `/boot/config.txt`.  
+2. **Включаем i2c-0**. Для этого надо прописать строку `dtparam=i2c_vc=on` в файле `/boot/config.txt`. Ещё может понадобится в файл `/boot/cmdline.txt` дописать в конец строки через пробел команду `bcm2708.vc_i2c_override=1`. Но это не точно. После всего - перезагрузка.  
 3. **Устанавливаем библиотеку**, которая поможет нам переключить порт i2c-0 с разъёма камеры S5 на дополнительную клеммную колодку P5. Последнюю версию библиотеки можно найти здесь: http://www.airspayce.com/mikem/bcm2835/ Также, на всякий случай, я сохраню копию [у себя в репозитории](libs/bcm2835-1.52.tar.gz). Команды для установки:
    ```bash
    wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.52.tar.gz
