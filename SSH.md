@@ -126,3 +126,6 @@ https://habrahabr.ru/post/122445/
 
 21 способ обеспечения безопасности OpenSS. Всё по настроечному файлу оттуда я использовал.  
 http://ubuntovod.ru/instructions/21-sposob-zashity-openssh.html
+
+### Некоторые настройки PuTTY
+* Поставь галочку «Disable application keypad mode» в разделе «Features» чтобы цифровая клавиатура работала и в VIM
