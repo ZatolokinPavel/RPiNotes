@@ -102,4 +102,11 @@ _Но он не сработал, потому что пытается найт�
    ```  
 5. **Удаление fake-hwclock**  
    Пока не знаю даже, обязательно ли это делать.  
-   Вообще для этого используются такие команды: `sudo update-rc.d fake-hwclock remove`, `sudo apt-get remove fake-hwclock`, `sudo rm /etc/cron.hourly/fake-hwclock`, `sudo rm /etc/init.d/fake-hwclock`. Но как-то слишком радикально.  
+   Вообще для этого используются такие команды:  
+   ```bash
+   sudo update-rc.d fake-hwclock remove
+   sudo apt-get remove fake-hwclock
+   sudo rm /etc/cron.hourly/fake-hwclock
+   sudo rm /etc/init.d/fake-hwclock
+   ```
+   Но как-то слишком радикально.  
