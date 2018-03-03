@@ -63,7 +63,7 @@ https://martin-jones.com/2013/08/20/how-to-get-the-second-raspberry-pi-i2c-bus-t
    It initialises the library, sets GPIO 0 and 1 as normal inputs (thus disabling their I2C function) and enables GPIO 28 and 29 as alternate function 0 (I2C bus), with pullup enabled.  
    Далее нужно скомпилить его следующей командой  
    `cc i2c0.c -o i2c0_remap -lbcm2835`  
-   и можно пробовать запускать: `./i2c0` (или, если надо, `sudo ./i2c0`)  
+   и можно пробовать запускать: `./i2c0_remap` (или, если надо, `sudo ./i2c0_remap`)  
 5. **Добавляем переключение порта i2c-0 в автозагрузку**.  
    Для этого копируем файл `i2c0_remap` в каталог `/bin` и добавляем в файл `/etc/rc.local` до завершающей строки строки `exit 0` следующую строку:  
    `/bin/i2c0_remap # Remap i2c-0 port from S5 connector to P5 connector`  
