@@ -47,7 +47,7 @@ https://martin-jones.com/2013/08/20/how-to-get-the-second-raspberry-pi-i2c-bus-t
    #define BCM2835_GPIO_FSEL_INPT 0 
    #define BCM2835_GPIO_FSEL_ALT0 4 
 
-   main() {
+   void main() {
        bcm2835_init(); 
        bcm2835_gpio_fsel(0, BCM2835_GPIO_FSEL_INPT); 
        bcm2835_gpio_fsel(1, BCM2835_GPIO_FSEL_INPT); 
