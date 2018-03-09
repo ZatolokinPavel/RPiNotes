@@ -19,6 +19,7 @@ _Заметки и инструкции по настройке Raspberry Pi_
 15. [Установить и настроить Erlang.](Erlang.md)
 16. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
 17. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
+18. [При желании, включить порт i2c0 на доп. клеммнике P5](Port%20I2C-0.md)
 
 ### Раскладка клавиатуры и локализация консоли
 Взято отсюда http://blackdiver.net/it/linux/777  
