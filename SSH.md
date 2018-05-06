@@ -13,20 +13,21 @@ http://www.aitishnik.ru/linux/ssh-debian/nastroyka-openssh.html
 Вот важные параметры из файла настроек:
 ```bash
 Port 22                     # порт где будет доступен SSH (лучше нестандартный)
-#ListenAddress ::
+#AddressFamily any
 #ListenAddress 0.0.0.0
+#ListenAddress ::
 Protocol 2                  # используй только вторую версию протокола
+
 # HostKeys for protocol version 2
 HostKey /etc/ssh/ssh_host_rsa_key
-HostKey /etc/ssh/ssh_host_dsa_key
 HostKey /etc/ssh/ssh_host_ecdsa_key
 HostKey /etc/ssh/ssh_host_ed25519_key
-#Privilege Separation is turned on for security
-UsePrivilegeSeparation yes      # разделение привилегий процессов чтобы не превышали права доступа
 
-# Lifetime and size временного серверного ключа протокола SSH-1
-#KeyRegenerationInterval 3600
-#ServerKeyBits 1024
+#Privilege Separation is turned on for security
+UsePrivilegeSeparation yes  # разделение привилегий процессов чтобы не превышали права доступа
+
+# Ciphers and keying
+#RekeyLimit default none
 
 # Logging
 SyslogFacility AUTH         # список каких событий будет записан в лог (/var/log/auth)
@@ -34,53 +35,49 @@ LogLevel INFO               # уровень детализации событи
 
 # Authentication:
 LoginGraceTime 20           # время ожидания авторизации = 20 сек
-MaxStartups 10:30:20        # кол-во неавторизованных подключений (start:rate:full)
 PermitRootLogin no          # запрещено заходить под рутом (пользуйтесь sudo)
-PermitEmptyPasswords no     # пустые пароли запрещены
 StrictModes yes             # проверка прав и владение домашним каталогом пользователя
+#MaxAuthTries 6
+#MaxSessions 10
 AllowUsers pi               # по ssh разрешено заходить ТОЛЬКО пользователю 'pi'
 
-#RhostsAuthentication no     # небезопасная rhosts аутентификация запрещена (опция устарела)
 RSAAuthentication yes       # аутентификация RSA
 PubkeyAuthentication yes    # аутентификация по открытому ключу
-AuthorizedKeysFile	%h/.ssh/authorized_keys  # тут хранятся публичные ключи для пользователя
 
+# В этом файле хранятся публичные ключи для пользователя
+AuthorizedKeysFile	.ssh/authorized_keys
+
+#AuthorizedPrincipalsFile none
+
+#AuthorizedKeysCommand none
+#AuthorizedKeysCommandUser nobody
+
+# For this to work you will also need host keys in /etc/ssh/ssh_known_hosts
+HostbasedAuthentication no
+RhostsRSAAuthentication no
+# Change to yes if you don't trust ~/.ssh/known_hosts for HostbasedAuthentication
+IgnoreUserKnownHosts yes
 IgnoreRhosts yes            # Don't read the user's ~/.rhosts and ~/.shosts files
-RhostsRSAAuthentication no  # For this to work you will also need host keys in /etc/ssh_known_hosts
-HostbasedAuthentication no  # similar for protocol version 2
-#IgnoreUserKnownHosts yes   # don't trust ~/.ssh/known_hosts for RhostsRSAAuthentication
+
+# To disable tunneled clear text passwords, change to no here!
+PasswordAuthentication no   # отключил авторизацию по паролю. Подключение только по ключу
+PermitEmptyPasswords no     # пустые пароли запрещены
 
 # Change to yes to enable challenge-response passwords (beware issues with
 # some PAM modules and threads)
 ChallengeResponseAuthentication no
 
-PasswordAuthentication no   # отключил авторизацию по паролю. Подключение только по ключу
-
 # Kerberos options
 #KerberosAuthentication no
-#KerberosGetAFSToken no
 #KerberosOrLocalPasswd yes
 #KerberosTicketCleanup yes
+#KerberosGetAFSToken no
 
 # GSSAPI options
 #GSSAPIAuthentication no
 #GSSAPICleanupCredentials yes
-
-#X11Forwarding yes          # проброс иксов через ssh туннель
-#X11DisplayOffset 10
-PrintMotd no                # показывать сообщение дня из файла /etc/motd
-PrintLastLog yes            # показывать, когда и откуда последний раз заходил
-TCPKeepAlive no             # для поддержания соединения со стороны сервера (вариант похуже)
-ClientAliveCountMax 3       # кол-во пингов клиента до закрытия сессии (вариант получше)
-ClientAliveInterval 20      # время между пингами неработающей сессии
-#UseLogin no
-
-#Banner /etc/issue.net
-DebianBanner no             # скрываем информацию об операционке
-
-AcceptEnv LANG LC_*         # разрешаем клиенту передать переменную окружения 'locale'
-
-Subsystem sftp /usr/lib/openssh/sftp-server
+#GSSAPIStrictAcceptorCheck yes
+#GSSAPIKeyExchange no
 
 # Set this to 'yes' to enable PAM authentication, account processing,
 # and session processing. If this is enabled, PAM authentication will
@@ -91,8 +88,46 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 # If you just want the PAM account and session checks to run without
 # PAM authentication, then enable this but set PasswordAuthentication
 # and ChallengeResponseAuthentication to 'no'.
-# В общем, запустить sshd можно будет только от имени root.
 UsePAM yes
+
+#AllowAgentForwarding yes
+#AllowTcpForwarding yes
+#GatewayPorts no
+X11Forwarding no            # проброс иксов через ssh туннель
+#X11DisplayOffset 10
+#X11UseLocalhost yes
+#PermitTTY yes
+PrintMotd no                # показывать сообщение дня из файла /etc/motd
+PrintLastLog yes            # показывать, когда и откуда последний раз заходил
+TCPKeepAlive no             # для поддержания соединения со стороны сервера (вариант похуже)
+#UseLogin no
+#UsePrivilegeSeparation sandbox
+#PermitUserEnvironment no
+#Compression delayed
+ClientAliveInterval 20      # время между пингами неработающей сессии (вариант получше)
+ClientAliveCountMax 3       # кол-во пингов клиента до закрытия сессии (вариант получше)
+#UseDNS no
+#PidFile /var/run/sshd.pid
+MaxStartups 10:30:20        # кол-во неавторизованных подключений (start:rate:full)
+#PermitTunnel no
+#ChrootDirectory none
+#VersionAddendum none
+
+# no default banner path
+Banner none                 # скрываем информацию об операционке
+
+# Allow client to pass locale environment variables
+AcceptEnv LANG LC_*         # разрешаем клиенту передать переменную окружения 'locale'
+
+# override default of no subsystems
+Subsystem	sftp	/usr/lib/openssh/sftp-server
+
+# Example of overriding settings on a per-user basis
+#Match User anoncvs
+#	X11Forwarding no
+#	AllowTcpForwarding no
+#	PermitTTY no
+#	ForceCommand cvs server
 ```
 Проверить правильность конфига можно командой `ssh -t`  
 Показать все-все задействованные опции можно командой `ssh -T`  
