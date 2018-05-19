@@ -10,7 +10,7 @@ sudo apt-get install apache2
 Все файлы конфигурации Apache находятся в папке `/etc/apache2`.  
 Ещё апач создаёт файл `/var/www/html/index.html`, но вроде конфликтов это не вызывает.  
 
-Полезные команды.  
+#### Полезные команды.  
 Посмотреть запущен ли апач: `sudo systemctl status apache2.service`  
 Перезапустить апач: `sudo service apache2 restart`  
 Посмотреть, какой порт слушает апач: `sudo ss -tlpn`  
