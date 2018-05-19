@@ -28,3 +28,15 @@ sudo apt-get install apache2
 Основные настройки прописаны в файле `/etc/apache2/apache2.conf`.  
 Здесь, пока что, я знаю только, что нужно удалить весь блок `<Directory /usr/share>`. Потому что сайты у меня будут располагаться только в папке `/var/www/`.  
 Пока всё.  
+
+#### Добавление нового сайта  
+Где-нибудь, например в папке `/etc/apache2/sites-available/` создаём файл настройки виртуального хоста с таким содержимым:  
+```xml
+<VirtualHost *:80>
+    ServerName z.okfilm.com.ua
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/zhivoeslovo
+    ErrorLog ${APACHE_LOG_DIR}/z.okfilm.com.ua-error.log
+    CustomLog ${APACHE_LOG_DIR}/z.okfilm.com.ua-access.log common
+</VirtualHost>
+```
