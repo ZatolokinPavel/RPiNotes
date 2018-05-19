@@ -40,3 +40,6 @@ sudo apt-get install apache2
     CustomLog ${APACHE_LOG_DIR}/z.okfilm.com.ua-access.log common
 </VirtualHost>
 ```
+Затем в папке `/etc/apache2/sites-enabled/` нужно создать символьную ссылку на этот конфиг.  
+`$ sudo ln -s ../sites-available/zhivoeslovo.conf zhivoeslovo.conf`  
+Теперь создаём соответствующую папку и перезапускаем Apache.  
