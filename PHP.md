@@ -44,3 +44,7 @@ sudo apt-get install apache2
 Затем в папке `/etc/apache2/sites-enabled/` нужно создать символьную ссылку на этот конфиг.  
 `$ sudo ln -s ../sites-available/zhivoeslovo.conf zhivoeslovo.conf`  
 Теперь создаём соответствующую папку для сайта и перезапускаем Apache.  
+
+### Установка и настройка PHP
+Устанавливаем php и некоторые дополнительные модули  
+`sudo apt-get install php libapache2-mod-php php-mysql`  
