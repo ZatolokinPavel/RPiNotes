@@ -42,4 +42,4 @@ sudo apt-get install apache2
 ```
 Затем в папке `/etc/apache2/sites-enabled/` нужно создать символьную ссылку на этот конфиг.  
 `$ sudo ln -s ../sites-available/zhivoeslovo.conf zhivoeslovo.conf`  
-Теперь создаём соответствующую папку и перезапускаем Apache.  
+Теперь создаём соответствующую папку для сайта и перезапускаем Apache.  
