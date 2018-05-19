@@ -12,6 +12,7 @@ sudo apt-get install apache2
 
 #### Полезные команды.  
 Посмотреть запущен ли апач: `sudo systemctl status apache2.service`  
+Запустить апач: `sudo service apache2 start`  
 Перезапустить апач: `sudo apache2ctl restart`  
 Посмотреть, какой порт слушает апач: `sudo ss -tlpn`  
 
