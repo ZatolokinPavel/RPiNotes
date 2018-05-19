@@ -32,7 +32,7 @@ sudo apt-get install apache2
 #### Добавление нового сайта  
 Где-нибудь, например в папке `/etc/apache2/sites-available/` создаём файл настройки виртуального хоста с таким содержимым:  
 ```xml
-<VirtualHost *:80>
+<VirtualHost *:9280>
     ServerName z.okfilm.com.ua
     ServerAdmin webmaster@localhost
     DocumentRoot /var/www/zhivoeslovo
