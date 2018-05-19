@@ -48,3 +48,15 @@ sudo apt-get install apache2
 ### Установка и настройка PHP
 Устанавливаем php и некоторые дополнительные модули  
 `sudo apt-get install php libapache2-mod-php php-mysql`  
+
+### Установка и настройка MySQL  
+Будем устанавливать MariaDB. MariaDB – это форк MySQL. Программы взаимозаменяемы, даже процессы называются одинаково.  
+`sudo apt-get install mariadb-server`  
+После завершения установки нужно запустить простой скрипт безопасности, который удалит некоторые настройки по умолчанию и чуть заблокирует доступ к нашей системе.  
+`sudo mysql_secure_installation`  
+Ниже приведу перевод всех вопросов скрипта, так как это важная часть обеспечения безопасности базы.  
+
+
+`sudo systemctl status mariadb.service`
+`sudo mysql -u root -p`
+`sudo service mysql restart`
