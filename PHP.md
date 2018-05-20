@@ -27,9 +27,15 @@ sudo apt-get install apache2
 
 #### Основные настройки Apache  
 Основные настройки прописаны в файле `/etc/apache2/apache2.conf`.  
-Здесь, пока что, я знаю только, что нужно удалить весь блок `<Directory /usr/share>`. Потому что сайты у меня будут располагаться только в папке `/var/www/`.  
+Здесь нужно удалить весь блок `<Directory /usr/share>`. Потому что сайты у меня будут располагаться только в папке `/var/www/`.  
+И в блоке `<Directory /var/www/>` заменить `AllowOverride None` на `AllowOverride All`.  
 Ещё в любом месте нужно дописать директиву `ServerName localhost`. Не очень понятно, зачем апачу она так сильно нужна, но он без неё ругается.  
-Пока всё.  
+
+Ещё полюбому понадобится модуль rewrite. Подключаем его:  
+```
+user@machine:/etc/apache2/mods-enabled $ sudo ln -s ../mods-available/rewrite.load
+sudo apache2ctl restart
+```
 
 #### Добавление нового сайта  
 Где-нибудь, например в папке `/etc/apache2/sites-available/` создаём файл настройки виртуального хоста с таким содержимым:  
