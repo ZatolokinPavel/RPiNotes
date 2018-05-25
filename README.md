@@ -18,6 +18,7 @@ _Заметки и инструкции по настройке Raspberry Pi_
 14. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm)
 15. [Установить и настроить Erlang.](Erlang.md)
 16. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
+17. [Поднять FTP сервер](FTP.md) для загрузки файлов в общую папку.
 17. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
 18. При желании, [включить порт i2c0 на доп. клеммнике P5](Port%20I2C-0.md)
 19. Если надо, установить [Apache, PHP и MySQL](PHP.md)
