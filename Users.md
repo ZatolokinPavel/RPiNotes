@@ -2,4 +2,6 @@
 
 ### Полезные команды
 `$ cat /etc/passwd` - account:password:UID:GID:GECOS:directory:shell  
-``
+`$ w` или `$ who` - g  
+`$ lastlog` - g  
+
