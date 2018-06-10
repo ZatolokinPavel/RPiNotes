@@ -7,13 +7,20 @@
 `$ w` или `$ who` - показать какие пользователи сейчас активны и что выполняют  
 `$ lastlog` - дата последнего входа для каждого пользователя  
 
-### Добавление нового пользователя  
-Полная команда для добавления обычного пользователя:  
-`adduser [--home КАТ] [--shell ОБОЛОЧКА] [--no-create-home] [--uid ID] [--firstuid ID] [--lastuid ID] [--gecos GECOS] [--ingroup ГРУППА | --gid ID] [--disabled-password] [--disabled-login] [--add_extra_groups] ПОЛЬЗОВАТЕЛЬ`  
-
-Мне нужно добавить пользователя okfilm самой простой командой:  
-`adduser okfilm`  
-Добавляем пользователя в список разрешенных для доступа по ssh. Для этого в файле `/etc/ssh/sshd_config` дописываем его в параметр `AllowUsers`  
+### Добавление пользователя okfilm для загрузки файлов  
+1. Собственно, добавляем пользователя okfilm: `adduser okfilm`  
+2. Добавляем пользователя в список разрешенных для доступа по ssh.  
+Для этого в файле `/etc/ssh/sshd_config` дописываем его в параметр `AllowUsers`  
+3. Запрещаем пользователю okfilm просматривать любые каталоги кроме его домашней папки. Для этого нужно в файле `/etc/ssh/sshd_config` закимментировать строчку  
+`#Subsystem sftp /usr/lib/openssh/sftp-server`  
+а в самый конец добавить следующие строки:  
+```
+Subsystem sftp internal-sftp -f AUTH -l VERBOSE
+Match user okfilm
+    ChrootDirectory %h
+    ForceCommand internal-sftp
+    AllowTcpForwarding no
+```
 
 ### Изменение данных пользователя  
 `chfn [параметры] [ПОЛЬЗОВАТЕЛЬ]` - поменять параметры GECOS для пользователя  
