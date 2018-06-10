@@ -12,4 +12,7 @@
 `adduser [--home КАТ] [--shell ОБОЛОЧКА] [--no-create-home] [--uid ID] [--firstuid ID] [--lastuid ID] [--gecos GECOS] [--ingroup ГРУППА | --gid ID] [--disabled-password] [--disabled-login] [--add_extra_groups] ПОЛЬЗОВАТЕЛЬ`  
 
 Мне нужно добавить пользователя okfilm самой простой командой:  
-`adduser okfilm`
+`adduser okfilm`  
+
+### Изменение данных пользователя  
+`chfn [параметры] [ПОЛЬЗОВАТЕЛЬ]` - поменять параметры GECOS для пользователя  
