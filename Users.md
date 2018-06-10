@@ -16,7 +16,7 @@ https://www.dmosk.ru/miniinstruktions.php?mini=ssh-chroot
 Для этого в файле `/etc/ssh/sshd_config` дописываем его в параметр `AllowUsers`  
 3. Запрещаем пользователю okfilm просматривать любые каталоги кроме его домашней папки. Для этого нужно в файле `/etc/ssh/sshd_config` закимментировать строчку  
 `#Subsystem sftp /usr/lib/openssh/sftp-server`  
-а в самый конец добавить следующие строки:  
+а в самый конец добавить следующие строки. Тем самым мы включаем встроенный sftp сервер вместо того, который внешний (Subsystem sftp /usr/lib/openssh/sftp-server)  
 ```
 Subsystem sftp internal-sftp -f AUTH -l VERBOSE
 Match user okfilm
