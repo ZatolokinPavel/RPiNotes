@@ -48,3 +48,7 @@
 `sudo chown -R pi:pi /mnt/okusb/`
 
 Ну и может что ещё интересное про монтирование можно прочитать в этой статье: https://itshaman.ru/articles/3/mount
+
+### Автомонтирование
+Командой `blkid` смотрим UUID флешки. Флешка, скорее всего, это устройство `/dev/sda1`.  
+http://tftf.ru/stati/linux/avtomontirovanie_diskov_pri_zapuske_linux_(k)ubuntu__podklyuchenie_diskov/
