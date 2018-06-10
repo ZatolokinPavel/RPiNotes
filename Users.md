@@ -26,6 +26,8 @@ Match user okfilm
     AllowTcpForwarding no
 ```
 4. Перезапускам sshd `$ sudo service ssh restart`  
+5. Под обычным пользователем переходим в домашнюю папку пользователя okfilm и создаём символьную ссылку на папку файлообменника:  
+`/home/okfilm $ sudo ln -s /var/www/shared-global/`
 
 ### Изменение данных пользователя  
 `chfn [параметры] [ПОЛЬЗОВАТЕЛЬ]` - поменять параметры GECOS для пользователя  
