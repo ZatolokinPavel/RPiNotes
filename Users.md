@@ -7,4 +7,9 @@
 `$ w` или `$ who` - показать какие пользователи сейчас активны и что выполняют  
 `$ lastlog` - дата последнего входа для каждого пользователя  
 
-### Добавление нового пользователя
+### Добавление нового пользователя  
+Полная команда для добавления обычного пользователя:  
+`adduser [--home КАТ] [--shell ОБОЛОЧКА] [--no-create-home] [--uid ID] [--firstuid ID] [--lastuid ID] [--gecos GECOS] [--ingroup ГРУППА | --gid ID] [--disabled-password] [--disabled-login] [--add_extra_groups] ПОЛЬЗОВАТЕЛЬ`  
+
+Мне нужно добавить пользователя okfilm следующей командой:  
+`adduser --home /var/www/shared-global/ okfilm`
