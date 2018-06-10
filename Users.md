@@ -8,7 +8,8 @@
 `$ lastlog` - дата последнего входа для каждого пользователя  
 
 ### Добавление пользователя okfilm для загрузки файлов  
-https://www.dmosk.ru/miniinstruktions.php?mini=ssh-chroot
+https://www.dmosk.ru/miniinstruktions.php?mini=ssh-chroot  
+http://forum.ispsystem.ru/showthread.php?3528-Доступ-по-SSH-в-chroot-окружение/page4  
 
 1. Собственно, добавляем пользователя okfilm:  
 `$ sudo adduser okfilm`  
