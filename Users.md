@@ -11,5 +11,5 @@
 Полная команда для добавления обычного пользователя:  
 `adduser [--home КАТ] [--shell ОБОЛОЧКА] [--no-create-home] [--uid ID] [--firstuid ID] [--lastuid ID] [--gecos GECOS] [--ingroup ГРУППА | --gid ID] [--disabled-password] [--disabled-login] [--add_extra_groups] ПОЛЬЗОВАТЕЛЬ`  
 
-Мне нужно добавить пользователя okfilm следующей командой:  
-`adduser --home /var/www/shared-global/ okfilm`
+Мне нужно добавить пользователя okfilm самой простой командой:  
+`adduser okfilm`
