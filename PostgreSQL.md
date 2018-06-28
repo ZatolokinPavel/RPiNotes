@@ -7,5 +7,9 @@
 `apt-cache policy postgresql` - посмотреть какая версия будет устанавливаться  
 `apt-cache policy postgresql-10` - посмотреть какая минорная версия PostgreSQL 10 будет установлена  
 `apt-cache policy postgresql-9.6` - посмотреть какая минорная версия PostgreSQL 9.6 будет установлена  
+
 Собственно установка:  
-`sudo apt-get install postgresql` - установка ядра версии по умолчанию. Скорее всего это будет самая последняя версия. Но также можно указать, какую версию ставить, командами `sudo apt-get install postgresql-10` или `sudo apt-get install postgresql-9.6`.  
+`sudo apt-get install postgresql` - установка ядра версии по умолчанию. Скорее всего самой последней.  
+> Также можно указать, какую версию ставить, командами  
+> `sudo apt-get install postgresql-10` или  
+> `sudo apt-get install postgresql-9.6`  
