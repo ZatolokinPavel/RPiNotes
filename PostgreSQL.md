@@ -32,9 +32,12 @@
 Для этого нужно войти в командную строку postgres под ролью `postgres`, которая является суперпользователем, создать новую роль и назначить ей необходимые привилегии. ([Статья](https://postgrespro.ru/docs/postgresql/9.6/sql-createrole))  
 ```sql
 sudo -u postgres psql
-\du
-postgres=# CREATE ROLE имя WITH LOGIN CREATEDB;
-\du
-\q
+postgres=# \du
+postgres=# CREATE ROLE имя_пользователя WITH LOGIN CREATEDB;
+postgres=# \du
+postgres=# \password имя_пользователя
+Введите новый пароль:
+Повторите его:
+postgres=# \q
 ```
 Если в ОС присутствует пользователь с таким же именем, как только что созданная роль БД, то можно выполнить вход под этим пользователем и работать с базой.
