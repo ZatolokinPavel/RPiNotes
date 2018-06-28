@@ -34,6 +34,6 @@
 ```sql
 sudo -u postgres psql
 \du
-postgres=# CREATE ROLE имя WITH LOGIN CREATEDB ENCRYPTED;
+postgres=# CREATE ROLE имя WITH LOGIN CREATEDB;
 \du
 ```
