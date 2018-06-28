@@ -11,7 +11,7 @@ _Заметки и инструкции по настройке Raspberry Pi_
 7. [Настроить пользователей системы.](Users.md)
 8. [Настроить SSH доступ и локальную сеть.](SSH.md)
 9. [Установить и настроить Samba для создания общей папки.](Samba.md)
-10. Добавить репозиторий **stretch**. [(см. ниже)](#Добавление-репозитория-stretch)
+10. Добавить репозиторий **buster**. [(см. ниже)](#Добавление-репозитория-buster)
 11. [Настроить часы реального времени.](RTC.md)
 12. [Установить и настроить Nginx.](Nginx.md)
 13. [Настроить SSL для Nginx (https).](SSL%20(https).md)
@@ -107,11 +107,11 @@ https://www.raspberrypi.org/documentation/raspbian/updating.md
 `sudo apt-get install htop`  
 `sudo apt-get install ntpstat` - статус NTP, нужен для мониторилки сайта  
 
-### Добавление репозитория stretch
-Этот репозиторий нужно добавить, чтобы из него ставить самые свежие версии пакетов с помощью apt-get. Это репозиторий будущей версии Debian. А текущая версия Debian - Jessie.  
+### Добавление репозитория buster
+Этот репозиторий нужно добавить, чтобы из него ставить самые свежие версии пакетов с помощью apt-get. Это репозиторий будущей версии Debian. А текущая версия Debian - Stretch (9.1). Посмотреть текущую версию можно командой `lsb_release -a`.  
 Итак, в файле `/etc/apt/source.list` уже есть строчка  
-`deb http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rpi`  
-нужно просто добавить ещё и эту:  
 `deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi`  
+нужно просто добавить ещё и эту:  
+`deb http://mirrordirector.raspbian.org/raspbian/ buster main contrib non-free rpi`  
 Сохранить файл и обновить информацию о пакетах  
 `$ sudo apt-get update`
