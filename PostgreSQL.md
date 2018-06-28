@@ -15,3 +15,9 @@
 > `sudo apt-get install postgresql-10` или  
 > `sudo apt-get install postgresql-9.6`  
 При этом будут установлены и пакеты libpq5 postgresql-client-10 postgresql-client-common postgresql-common  
+
+### Запуск
+Тут всё как обычно:  
+`sudo service postgresql start` - запуск  
+`sudo service postgresql stop` - остановка  
+`sudo service postgresql restart` - перезапуск  
