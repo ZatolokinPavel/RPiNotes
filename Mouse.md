@@ -7,8 +7,15 @@
 Теперь запускаем `xev` или `xev | grep button` и нажимаем кнопку мыши. Возможно нажимать кнопку нужно когда указатель находится на белом поле. В консоли увидим что-то вроде `state 0x10, button 9, same_screen YES`.  
 Открываем в редакторе конфиг `nano ~/.xbindkeysrc` и внизу дописываем вот эти строки:  
 ```
+"/usr/bin/xvkbd -text "\[Control]\[Insert]""
+  m:0x10 + b:6
+
+"/usr/bin/xvkbd -text "\[Shift]\[Insert]""
+  m:0x10 + b:7
+
 "/usr/bin/xvkbd -text "\[Control]\[Alt]\[Up]""
   m:0x10 + b:8
+
 "/usr/bin/xvkbd -text "\[Control]\[Alt]\[Down]""
   m:0x10 + b:9
 ```
