@@ -164,3 +164,7 @@ http://ubuntovod.ru/instructions/21-sposob-zashity-openssh.html
 
 ### Некоторые настройки PuTTY
 * Поставь галочку «Disable application keypad mode» в разделе «Features» чтобы цифровая клавиатура работала и в VIM
+
+### А если доступ по SSH с рабочего компа закрыт?  
+Для этого сделаем SSH-клиент в браузере ([shellinabox](https://github.com/shellinabox/shellinabox)). Ещё описание [тут](https://ergoz.ru/web-ssh-klient-ssh-cherez-brauzer/).  
+`sudo apt-get install shellinabox`  
