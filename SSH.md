@@ -168,3 +168,12 @@ http://ubuntovod.ru/instructions/21-sposob-zashity-openssh.html
 ### А если доступ по SSH с рабочего компа закрыт?  
 Для этого сделаем SSH-клиент в браузере ([shellinabox](https://github.com/shellinabox/shellinabox)). Ещё описание [тут](https://ergoz.ru/web-ssh-klient-ssh-cherez-brauzer/).  
 `sudo apt-get install shellinabox`  
+Команды для запуска, остановки и прочего практически стандартные:  
+```bash
+sudo /etc/init.d/shellinabox start
+sudo /etc/init.d/shellinabox stop
+sudo /etc/init.d/shellinabox restart
+sudo /etc/init.d/shellinabox reload
+sudo /etc/init.d/shellinabox status
+```
+В папке `/etc/shellinabox/` есть немного настроек. Но только касательно внешнего вида. 
