@@ -168,16 +168,21 @@ http://ubuntovod.ru/instructions/21-sposob-zashity-openssh.html
 ### А если доступ по SSH с рабочего компа закрыт?  
 Для этого сделаем SSH-клиент в браузере ([shellinabox](https://github.com/shellinabox/shellinabox)). Ещё описание [тут](https://ergoz.ru/web-ssh-klient-ssh-cherez-brauzer/).  
 `sudo apt-get install shellinabox`  
-Команды для запуска, остановки и прочего практически стандартные:  
+Команды для запуска, остановки и прочего стандартные:  
 ```bash
-sudo /etc/init.d/shellinabox start
-sudo /etc/init.d/shellinabox stop
-sudo /etc/init.d/shellinabox restart
-sudo /etc/init.d/shellinabox reload
-sudo /etc/init.d/shellinabox status
+sudo service shellinabox start
+sudo service shellinabox stop
+sudo service shellinabox restart
+sudo service shellinabox reload
+sudo service shellinabox status
 ```
 В папке `/etc/shellinabox/` есть немного настроек. Но только касательно внешнего вида. Так как я предпочитаю тёмную тему, то переименуем файлы с темами, чтобы по-умолчанию была тёмная:  
 ```bash
 pi@rpi:/etc/shellinabox/options-enabled $ sudo mv 00+Black\ on\ White.css 00_Black\ on\ White.css
 pi@rpi:/etc/shellinabox/options-enabled $ sudo mv 00_White\ On\ Black.css 00+White\ On\ Black.css
 ```
+Нужно проверить работоспособность. Для этого открываем в браузере https://my.server.domain:4200 и видим консоль.  
+
+Ок. Теперь нужно немного защититься. В файле `/etc/default/shellinabox` в переменную `SHELLINABOX_ARGS` нужно добавить переменные ` –localhost-only –disable-ssl`. Первая, чтобы shellinabox был доступен извне только через nginx. А вторая - чтобы не нагружать лишний раз процессор, так как ssl обеспечит nginx.  
+Перезапускаем shellinabox и проверяем доступ извне. Он должен пропасть.  
+Теперь настраиваем обычный редирект (реверс-прокси) на nginx. Всё, должно работать.  
