@@ -176,4 +176,8 @@ sudo /etc/init.d/shellinabox restart
 sudo /etc/init.d/shellinabox reload
 sudo /etc/init.d/shellinabox status
 ```
-В папке `/etc/shellinabox/` есть немного настроек. Но только касательно внешнего вида. 
+В папке `/etc/shellinabox/` есть немного настроек. Но только касательно внешнего вида. Так как я предпочитаю тёмную тему, то переименуем файлы с темами, чтобы по-умолчанию была тёмная:  
+```bash
+pi@rpi:/etc/shellinabox/options-enabled $ sudo mv 00+Black\ on\ White.css 00_Black\ on\ White.css
+pi@rpi:/etc/shellinabox/options-enabled $ sudo mv 00_White\ On\ Black.css 00+White\ On\ Black.css
+```
