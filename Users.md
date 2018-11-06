@@ -16,9 +16,10 @@ http://forum.ispsystem.ru/showthread.php?3528-Доступ-по-SSH-в-chroot-о
 1. Собственно, добавляем пользователя okfilm:  
 `$ sudo adduser okfilm`  
 `$ sudo passwd okfilm` и задаём ему пароль.  
-2. Добавляем пользователя в список разрешенных для доступа по ssh.  
+2. Создаём пользователю `okfilm` сертификат, сохраняем его в `~/.ssh/authorized_keys`, копируем на комп и подготавливаем для PuTTY. Всё это описано [здесь](SSH.md#сертификаты-для-ssh).  
+3. Добавляем пользователя в список разрешенных для доступа по ssh.  
 Для этого в файле `/etc/ssh/sshd_config` дописываем его в параметр `AllowUsers`  
-3. Запрещаем пользователю okfilm просматривать любые каталоги кроме его домашней папки. Для этого нужно в файле `/etc/ssh/sshd_config` закимментировать строчку  
+4. Запрещаем пользователю okfilm просматривать любые каталоги кроме его домашней папки. Для этого нужно в файле `/etc/ssh/sshd_config` закимментировать строчку  
 `#Subsystem sftp /usr/lib/openssh/sftp-server`  
 а в самый конец добавить следующие строки. Тем самым мы включаем встроенный sftp сервер вместо того, который внешний (Subsystem sftp /usr/lib/openssh/sftp-server)  
 ```
@@ -28,10 +29,10 @@ Match user okfilm
     ForceCommand internal-sftp
     AllowTcpForwarding no
 ```
-4. Перезапускам sshd `$ sudo service ssh restart`  
-5. В домашней папке пользователя okfilm создаём папку `/home/okfilm/shared-global/` и меняем ей права на 777 и владельца на okfilm:  
+5. Перезапускам sshd `$ sudo service ssh restart`  
+6. В домашней папке пользователя okfilm создаём папку `/home/okfilm/shared-global/` и меняем ей права на 777 и владельца на okfilm:  
 `sudo chown okfilm:okfilm shared-global/`  
-5. Под обычным пользователем переходим в домашнюю папку пользователя okfilm и создаём символьную ссылку на папку файлообменника:  
+7. Под обычным пользователем переходим в домашнюю папку пользователя okfilm и создаём символьную ссылку на папку файлообменника:  
 `/home/okfilm $ sudo ln -s /var/www/shared-global/`
 
 ### Изменение данных пользователя  
