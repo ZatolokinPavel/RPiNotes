@@ -120,7 +120,8 @@ Banner none                 # скрываем информацию об опе�
 AcceptEnv LANG LC_*         # разрешаем клиенту передать переменную окружения 'locale'
 
 # override default of no subsystems
-Subsystem	sftp	/usr/lib/openssh/sftp-server
+#Subsystem	sftp	/usr/lib/openssh/sftp-server
+Subsystem sftp internal-sftp -f AUTH -l VERBOSE   # этот лучше
 
 # Example of overriding settings on a per-user basis
 #Match User anoncvs
