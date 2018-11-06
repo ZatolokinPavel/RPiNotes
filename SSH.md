@@ -121,7 +121,7 @@ AcceptEnv LANG LC_*         # разрешаем клиенту передать
 
 # override default of no subsystems
 #Subsystem	sftp	/usr/lib/openssh/sftp-server
-Subsystem	sftp internal-sftp -f AUTH -l VERBOSE   # этот лучше
+Subsystem	sftp internal-sftp -f AUTH -l VERBOSE   # встроенный лучше чем тот старый
 
 # Example of overriding settings on a per-user basis
 #Match User anoncvs
