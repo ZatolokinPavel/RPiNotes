@@ -41,7 +41,7 @@ StrictModes yes             # проверка прав и владение до
 #MaxSessions 10
 AllowUsers pi               # по ssh разрешено заходить ТОЛЬКО пользователю 'pi'
 
-RSAAuthentication yes       # аутентификация RSA
+#RSAAuthentication yes      # аутентификация RSA (deprecated)
 PubkeyAuthentication yes    # аутентификация по открытому ключу
 
 # В этом файле хранятся публичные ключи для пользователя
@@ -54,7 +54,7 @@ AuthorizedKeysFile	.ssh/authorized_keys
 
 # For this to work you will also need host keys in /etc/ssh/ssh_known_hosts
 HostbasedAuthentication no
-RhostsRSAAuthentication no
+#RhostsRSAAuthentication no # (deprecated)
 # Change to yes if you don't trust ~/.ssh/known_hosts for HostbasedAuthentication
 IgnoreUserKnownHosts yes
 IgnoreRhosts yes            # Don't read the user's ~/.rhosts and ~/.shosts files
