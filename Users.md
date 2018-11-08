@@ -12,7 +12,7 @@ https://www.dmosk.ru/miniinstruktions.php?mini=ssh-chroot
 http://forum.ispsystem.ru/showthread.php?3528-Доступ-по-SSH-в-chroot-окружение/page4  
 
 0. Сначала готовим папку для загрузки файлов.  
-Для этого создаём папку `/mnt/shared-flash/`, настраиваем [монтирование в неё флешки](USB%20флешка.md), перемещаем все файлы из `/var/www/shared-global/` на флешку и ставим вместо папки `/var/www/shared-global/` символьную ссылку на папку `/mnt/shared-flash/`. Таким образом у нас весь файлообменник будет храниться на флешке.  
+Для этого создаём папку `/mnt/okusb/`, настраиваем [монтирование в неё флешки](USB%20флешка.md), перемещаем все файлы из `/var/www/shared-global/` на флешку и ставим вместо папки `/var/www/shared-global/` символьную ссылку на папку `/mnt/okusb/`. Таким образом у нас весь файлообменник будет храниться на флешке.  
 1. Собственно, добавляем пользователя okfilm:  
 `$ sudo adduser okfilm`  
 `$ sudo passwd okfilm` и задаём ему пароль.  
@@ -26,12 +26,12 @@ http://forum.ispsystem.ru/showthread.php?3528-Доступ-по-SSH-в-chroot-о
    И в самый конец нужно добавить следующие строки:  
    ```
    Match user okfilm
-       ChrootDirectory /mnt/shared-flash
+       ChrootDirectory /mnt/okusb
        ForceCommand internal-sftp
        AllowTcpForwarding no
        X11Forwarding no
    ```
-   Важно чтобы все папки в пути `ChrootDirectory /mnt/shared-flash` имели права 755, и их владельцем был root. А уж внутри можно создавать любые папки с любыми правами.  
+   Важно чтобы все папки в пути `ChrootDirectory /mnt/okusb` имели права 755, и их владельцем был root. А уж внутри можно создавать любые папки с любыми правами.  
 5. Перезапускам sshd `$ sudo service ssh restart`   
 6. Под обычным пользователем переходим в домашнюю папку пользователя okfilm и создаём символьную ссылку на папку файлообменника:  
    `/home/okfilm $ sudo ln -s /var/www/shared-global/`
