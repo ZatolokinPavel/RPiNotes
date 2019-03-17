@@ -44,10 +44,10 @@ PubkeyAuthentication yes    # аутентификация по открытом
 # В этом файле хранятся публичные ключи для пользователя
 AuthorizedKeysFile	.ssh/authorized_keys
 
-#AuthorizedPrincipalsFile none
+AuthorizedPrincipalsFile none
 
-#AuthorizedKeysCommand none
-#AuthorizedKeysCommandUser nobody
+AuthorizedKeysCommand none  # программа, которая будет искать открытые ключи пользователя
+AuthorizedKeysCommandUser nobody
 
 # For this to work you will also need host keys in /etc/ssh/ssh_known_hosts
 HostbasedAuthentication no
