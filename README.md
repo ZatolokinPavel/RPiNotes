@@ -13,16 +13,17 @@ _Заметки и инструкции по настройке Raspberry Pi_
 9. [Установить и настроить Samba для создания общей папки.](Samba.md)
 10. Добавить репозиторий **buster**. [(см. ниже)](#Добавление-репозитория-buster)
 11. [Настроить часы реального времени.](RTC.md)
-12. [Установить и настроить Nginx.](Nginx.md)
-13. [Настроить SSL для Nginx (https).](SSL%20(https).md)
-14. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm)
-15. [Установить и настроить Erlang.](Erlang.md)
-16. [Установить и настроить PostgreSQL](PostgreSQL.md)
-17. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
-18. [Поднять FTP сервер](FTP.md) для загрузки файлов в общую папку.
-19. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
-20. При желании, [включить порт i2c0 на доп. клеммнике P5](Port%20I2C-0.md)
-21. Если надо, установить [Apache, PHP и MySQL](PHP.md)
+12. Отключить Wi-Fi и Bluetooth [(см. ниже)](#Отключение-Wi-Fi-и-Bluetooth)
+13. [Установить и настроить Nginx.](Nginx.md)
+14. [Настроить SSL для Nginx (https).](SSL%20(https).md)
+15. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm)
+16. [Установить и настроить Erlang.](Erlang.md)
+17. [Установить и настроить PostgreSQL](PostgreSQL.md)
+18. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
+19. [Поднять FTP сервер](FTP.md) для загрузки файлов в общую папку.
+20. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
+21. При желании, [включить порт i2c0 на доп. клеммнике P5](Port%20I2C-0.md)
+22. Если надо, установить [Apache, PHP и MySQL](PHP.md)
 
 ### Раскладка клавиатуры и локализация консоли
 Взято отсюда http://blackdiver.net/it/linux/777  
@@ -116,3 +117,10 @@ https://www.raspberrypi.org/documentation/raspbian/updating.md
 `deb http://raspbian.raspberrypi.org/raspbian/ buster main contrib non-free rpi`  
 Сохранить файл и обновить информацию о пакетах  
 `$ sudo apt-get update`
+
+### Отключение Wi-Fi и Bluetooth
+Для моих задач они мне не нужны. Поэтому отключаем. Для этого нужно в файле `/boot/config.txt` прописать строки  
+`dtoverlay=pi3-disable-wifi`  
+`dtoverlay=pi3-disable-bt`  
+а также нужно отключить службу systemd, которая инициализирует модем, чтобы он не пытался использовать UART  
+`$ sudo systemctl disable hciuart`  
