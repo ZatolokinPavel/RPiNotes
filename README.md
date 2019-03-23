@@ -109,7 +109,7 @@ https://www.raspberrypi.org/documentation/raspbian/updating.md
 
 ### Добавление репозитория buster
 Этот репозиторий нужно добавить, чтобы из него ставить самые свежие версии пакетов с помощью apt-get. Это репозиторий будущей версии Debian. А текущая версия Debian - Stretch (9.1). Посмотреть текущую версию можно командой `lsb_release -a`.  
-Итак, в файле `/etc/apt/source.list` уже есть строчка  
+Итак, в файле `/etc/apt/sources.list` уже есть строчка  
 `deb http://mirrordirector.raspbian.org/raspbian/ stretch main contrib non-free rpi`  
 нужно просто добавить ещё и эту:  
 `deb http://mirrordirector.raspbian.org/raspbian/ buster main contrib non-free rpi`  
