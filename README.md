@@ -119,7 +119,11 @@ https://www.raspberrypi.org/documentation/raspbian/updating.md
 `$ sudo apt-get update`
 
 ### Отключение Wi-Fi и Bluetooth
-Для моих задач они мне не нужны. Поэтому отключаем. Для этого нужно в файле `/boot/config.txt` прописать строки  
+Для моих задач они мне не нужны. Поэтому отключаем. Кроме того, вот:  
+
+> On the Raspberry Pi Model 3B+ the hardware-based serial/UART device /dev/ttyAMA0 has been re-purposed to communicate with the built-in Bluetooth modem and is no longer mapped to the serial RX/TX pins on the GPIO header. Instead, a new serial port "/dev/ttyS0" has been provided which is implemented with a software-based UART (miniUART). This software-based UART ("/dev/ttyS0") does not support PARITY and some have experienced some stability issues using this port at higher speeds. If you don't need Bluetooth functionality, you can disable the BT modem and configure the RPi to use a device-tree overlay to re-map the hardware-based serial UART ("/dev/ttyAMA0") back to the GPIO header pins for TX/RX.  
+
+Для отключения нужно в файле `/boot/config.txt` прописать строки  
 `dtoverlay=pi3-disable-wifi`  
 `dtoverlay=pi3-disable-bt`  
 а также нужно отключить службу systemd, которая инициализирует модем, чтобы он не пытался использовать UART  
