@@ -128,3 +128,18 @@ https://www.raspberrypi.org/documentation/raspbian/updating.md
 `dtoverlay=pi3-disable-bt`  
 а также нужно отключить службу systemd, которая инициализирует модем, чтобы он не пытался использовать UART  
 `$ sudo systemctl disable hciuart`  
+
+### Дополнительные настройки  
+Нужно сделать, чтобы светодиод **act** работал наоборот: во время простоя светился, а во время работы с флешкой чтобы гас. Для этого в файл `/boot/config.txt` нужно прописать  
+`dtparam=act_led_activelow=on`  
+
+Ещё можно сделать кнопку выключения Raspbery Pi. Она будет только выключать. Не перезагружать и не включать заново. Но это уже что-то. Для этого тоже в `/boot/config.txt` нужно прописать  
+`dtoverlay=gpio-shutdown,gpio_pin=21`  
+Теперь если GPIO Pin 21 замкнуть на GND, то Raspbery Pi начнёт выключаться. Это получается нужно замкнуть между собой самые последние ножки на 40-штырьковом разъёме Raspbery Pi 3B+. Ножки 39 и 40.  
+История появления этого devicetree overlay [здесь](https://www.stderr.nl/Blog/Hardware/RaspberryPi/PowerButton.html).  
+
+Ещё нужно будет сделать управление кулером через ножку GPIO26. Для этого в файле `/boot/config.txt` нужно прописать  
+`dtoverlay=gpio-fan,gpiopin=26,temp=45000`  
+Таким образом, кулер будет включатся ножкой 37 при температуре процессора 45 градусов цельсия.  
+
+О всех остальных devicetree overlay можно почитать здесь: https://github.com/raspberrypi/firmware/blob/master/boot/overlays/README  
