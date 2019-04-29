@@ -13,7 +13,7 @@ http://www.aitishnik.ru/linux/ssh-debian/nastroyka-openssh.html
 Вот важные параметры из файла настроек:
 ```bash
 Port 22                     # порт где будет доступен SSH (лучше нестандартный)
-#AddressFamily any
+AddressFamily inet          # слушаем только IPv4 адреса (так проще)
 #ListenAddress 0.0.0.0
 #ListenAddress ::
 Protocol 2                  # используй только вторую версию протокола
