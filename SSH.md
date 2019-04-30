@@ -8,7 +8,8 @@
 http://www.aitishnik.ru/linux/ssh-debian/nastroyka-openssh.html  
 
 Настройки SSH сервера находятся в файле `/etc/ssh/sshd_config`  
-После изменения настроек нужно перезапускать сервер ssh: `$ sudo service ssh restart`
+После изменения настроек нужно перезапускать сервер ssh: `$ sudo service ssh restart`  
+Готовый конфиг можно [скачать отсюда](/configs/sshd_config). Это если в новых версиях ssh не поменяли структуру конфига.  
 
 Вот важные параметры из файла настроек:
 ```bash
