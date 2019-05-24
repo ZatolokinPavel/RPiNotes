@@ -51,7 +51,7 @@
 Ну и может что ещё интересное про монтирование можно прочитать в этой статье: https://itshaman.ru/articles/3/mount
 
 ### Автомонтирование
-Для этого будем использовать юниты Systemd.  
+Для этого будем использовать юниты Systemd. [Тыц](https://habr.com/ru/post/331240/), [тыц](https://dev.to/adarshkkumar/mount-a-volume-using-systemd-1h2f) и [тыц](https://habr.com/ru/company/southbridge/blog/255845/).  
 Юниты монтирования имеют расширение `.mount`. Системные юниты находятся в директории `/run/systemd/generator/`, а пользовательские юниты лучше кидать в `/etc/systemd/system/`.  
 > Mount units must be named after the mount point directories they control. Example: the mount point /home/lennart must be configured in a unit file home-lennart.mount.
 
