@@ -53,8 +53,30 @@
 ### Автомонтирование
 Для этого будем использовать юниты Systemd.  
 Юниты монтирования имеют расширение `.mount`. Системные юниты находятся в директории `/run/systemd/generator/`, а пользовательские юниты лучше кидать в `/etc/systemd/system/`.  
+> Mount units must be named after the mount point directories they control. Example: the mount point /home/lennart must be configured in a unit file home-lennart.mount.
 
-#### Старый способ
+Итак, создаём файл `/etc/systemd/system/mnt-okusb.mount`  
+```
+[Unit]
+Description=OkFILM global share
+[Mount]
+What=/dev/disk/by-partuuid/494659b8-01
+Where=/mnt/okusb
+Type=ext4
+Options=rw
+DirectoryMode=0755
+```
+и файл автомонтирования `/etc/systemd/system/mnt-okusb.automount`  
+```
+[Unit]
+Description=OkFILM global share
+[Automount]
+Where=/mnt/okusb
+[Install]
+WantedBy=multi-user.target
+```
+
+##### Старый способ
 http://tftf.ru/stati/linux/avtomontirovanie_diskov_pri_zapuske_linux_(k)ubuntu__podklyuchenie_diskov/  
 Командой `sudo fdisk -l` можем посмотреть размер нашей флешки. Но и всё.  
 Командой `blkid` смотрим UUID и PARTUUID флешки. Флешка, скорее всего, это устройство `/dev/sda1`.  
