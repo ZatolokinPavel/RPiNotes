@@ -79,6 +79,7 @@ WantedBy=multi-user.target
 ```
 Теперь эти файлы нужно подключить:  
 `sudo systemctl enable mnt-okusb.mount`  
+`sudo systemctl enable mnt-okusb.automount`  
 Вроде всё. После загрузки флешка монтироваться не будет. Но она смонтируется сразу же, как только кто-то полезет в папку `/mnt/okusb`.
 
 ##### Старый способ
