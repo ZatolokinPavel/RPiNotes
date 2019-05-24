@@ -77,7 +77,9 @@ Where=/mnt/okusb
 [Install]
 WantedBy=multi-user.target
 ```
-Вроде всё. Теперь после загрузки флешка монтироваться не будет. Она смонтируется сразу же, как только кто-то полезет в папку `/mnt/okusb`.
+Теперь эти файлы нужно подключить:  
+`sudo systemctl enable mnt-okusb.mount`  
+Вроде всё. После загрузки флешка монтироваться не будет. Но она смонтируется сразу же, как только кто-то полезет в папку `/mnt/okusb`.
 
 ##### Старый способ
 http://tftf.ru/stati/linux/avtomontirovanie_diskov_pri_zapuske_linux_(k)ubuntu__podklyuchenie_diskov/  
