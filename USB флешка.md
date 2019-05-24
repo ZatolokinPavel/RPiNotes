@@ -51,6 +51,10 @@
 Ну и может что ещё интересное про монтирование можно прочитать в этой статье: https://itshaman.ru/articles/3/mount
 
 ### Автомонтирование
+Для этого будем использовать юниты Systemd.  
+Юниты монтирования имеют расширение `.mount`. Системные юниты находятся в директории `/run/systemd/generator/`, а пользовательские юниты лучше кидать в `/etc/systemd/system/`.  
+
+#### Старый способ
 http://tftf.ru/stati/linux/avtomontirovanie_diskov_pri_zapuske_linux_(k)ubuntu__podklyuchenie_diskov/  
 Командой `sudo fdisk -l` можем посмотреть размер нашей флешки. Но и всё.  
 Командой `blkid` смотрим UUID и PARTUUID флешки. Флешка, скорее всего, это устройство `/dev/sda1`.  
