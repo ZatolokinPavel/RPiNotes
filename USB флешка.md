@@ -63,8 +63,10 @@ Description=OkFILM global share
 What=/dev/disk/by-partuuid/494659b8-01
 Where=/mnt/okusb
 Type=ext4
-Options=rw
+Options=defaults
 DirectoryMode=0755
+[Install]
+WantedBy=multi-user.target
 ```
 и файл автомонтирования `/etc/systemd/system/mnt-okusb.automount`  
 ```
@@ -75,6 +77,7 @@ Where=/mnt/okusb
 [Install]
 WantedBy=multi-user.target
 ```
+Вроде всё. Теперь после загрузки флешка монтироваться не будет. Она смонтируется сразу же, как только кто-то полезет в папку `/mnt/okusb`.
 
 ##### Старый способ
 http://tftf.ru/stati/linux/avtomontirovanie_diskov_pri_zapuske_linux_(k)ubuntu__podklyuchenie_diskov/  
