@@ -13,10 +13,10 @@ xte is a program that generates fake input using the XTest extension, more relia
 `sudo apt-get install xautomation`  
 Открываем в редакторе конфиг `nano ~/.xbindkeysrc` и внизу дописываем вот эти строки:  
 ```
-"/usr/bin/xvkbd -text "\[Control]\[Insert]""
+"/usr/bin/xte 'keydown Control_L' 'key Insert' 'keyup Control_L'"
   m:0x10 + b:6
 
-"/usr/bin/xvkbd -text "\[Shift]\[Insert]""
+"/usr/bin/xte 'keydown Shift_L' 'key Insert' 'keyup Shift_L'"
   m:0x10 + b:7
 
 "/usr/bin/xte 'keydown Control_L' 'keydown Alt_L' 'key Up' 'keyup Control_L' 'keyup Alt_L'"
