@@ -53,3 +53,4 @@ xvkbd выполняет нажатие кнопок на виртуальной
 
 https://wiki.archlinux.org/index.php/Xbindkeys_(Русский)  
 https://copyraite.blogspot.com/2012/05/ubuntu-1204_14.html  
+https://linux.die.net/man/1/xte  
