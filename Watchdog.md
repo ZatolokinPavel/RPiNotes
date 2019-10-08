@@ -8,9 +8,13 @@
 `watchdog-timeout = 15`  
 
 Теперь нужно запустить демона:  
-`sudo systemctl start watchdog`  
-`sudo systemctl enable watchdog`  
+`sudo systemctl start watchdog.service`  
+`sudo systemctl enable watchdog.service` (если эта команда не вводится по Tab, то значит сервис уже включён)  
 
 Ну а теперь в файл `/boot/config.txt` нужно добавить строку  
 `dtparam=watchdog=on`  
 и перезагрузить.  
+
+### Проверка
+`sudo systemctl is-active watchdog.service` - проверить, что сервис запущен сейчас  
+`sudo systemctl is-enabled watchdog.service` - проверить, что сервис в автозапуске  
