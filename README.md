@@ -13,18 +13,19 @@ _Заметки и инструкции по настройке Raspberry Pi_
 9. [Установить и настроить Samba для создания общей папки.](Samba.md)
 10. Добавить репозиторий **buster**. [(см. ниже)](#Добавление-репозитория-buster)
 11. [Настроить часы реального времени.](RTC.md)
-12. Отключить Wi-Fi и Bluetooth [(см. ниже)](#Отключение-Wi-Fi-и-Bluetooth)
-13. [Установить и настроить Nginx.](Nginx.md)
-14. [Настроить SSL для Nginx (https).](SSL%20(https).md)
-15. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm)
-16. [Установить и настроить Erlang.](Erlang.md)
-17. [Установить и настроить PostgreSQL](PostgreSQL.md)
-18. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
-19. [Настроить монтирование флешки](USB%20%D1%84%D0%BB%D0%B5%D1%88%D0%BA%D0%B0.md) чтобы хранить там общедоступные файлы.
-20. [Поднять FTP сервер](FTP.md) для загрузки файлов в общую папку.
-21. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
-22. При желании, [включить порт i2c0 на доп. клеммнике P5](Port%20I2C-0.md)
-23. Если надо, установить [Apache, PHP и MySQL](PHP.md)
+12. [Настроить watchdog.](Watchdog.md)
+13. Отключить Wi-Fi и Bluetooth [(см. ниже)](#Отключение-Wi-Fi-и-Bluetooth)
+14. [Установить и настроить Nginx.](Nginx.md)
+15. [Настроить SSL для Nginx (https).](SSL%20(https).md)
+16. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm)
+17. [Установить и настроить Erlang.](Erlang.md)
+18. [Установить и настроить PostgreSQL](PostgreSQL.md)
+19. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
+20. [Настроить монтирование флешки](USB%20%D1%84%D0%BB%D0%B5%D1%88%D0%BA%D0%B0.md) чтобы хранить там общедоступные файлы.
+21. [Поднять FTP сервер](FTP.md) для загрузки файлов в общую папку.
+22. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
+23. При желании, [включить порт i2c0 на доп. клеммнике P5](Port%20I2C-0.md)
+24. Если надо, установить [Apache, PHP и MySQL](PHP.md)
 
 ### Раскладка клавиатуры и локализация консоли
 Взято отсюда http://blackdiver.net/it/linux/777  
