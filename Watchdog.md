@@ -7,7 +7,7 @@
 и дописать  
 `watchdog-timeout = 15`  
 
-Теперь нужно запустить демона:  
+Теперь нужно запустить демона (похоже, что не обязательно, может быть уже включён):  
 `sudo systemctl start watchdog.service`  
 `sudo systemctl enable watchdog.service` (если эта команда не вводится по Tab, то значит сервис уже включён)  
 
