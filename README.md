@@ -134,6 +134,7 @@ https://www.raspberrypi.org/documentation/raspbian/updating.md
 ### Дополнительные настройки  
 Нужно сделать, чтобы светодиод **act** работал наоборот: во время простоя светился, а во время работы с флешкой чтобы гас. Для этого в файл `/boot/config.txt` нужно прописать  
 `dtparam=act_led_activelow=on`  
+но может понадобится прописать и `act-led overlay`, хотя мне пока не пригодилось. [Пояснение тут](https://github.com/raspberrypi/firmware/blob/master/boot/overlays/README).  
 
 Ещё можно сделать кнопку выключения Raspbery Pi. Она будет только выключать. Не перезагружать и не включать заново. Но это уже что-то. Для этого тоже в `/boot/config.txt` нужно прописать  
 `dtoverlay=gpio-shutdown,gpio_pin=21`  
