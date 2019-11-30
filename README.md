@@ -11,7 +11,7 @@ _Заметки и инструкции по настройке Raspberry Pi_
 7. [Настроить SSH доступ и локальную сеть.](SSH.md)
 8. [Настроить пользователей системы.](Users.md)
 9. [Установить и настроить Samba для создания общей папки.](Samba.md)
-10. Добавить репозиторий **buster**. [(см. ниже)](#Добавление-репозитория-buster)
+10. Добавить репозиторий **bullseye**. [(см. ниже)](#Добавление-репозитория-bullseye)
 11. [Настроить часы реального времени.](RTC.md)
 12. [Настроить watchdog.](Watchdog.md)
 13. Отключить Wi-Fi и Bluetooth [(см. ниже)](#Отключение-Wi-Fi-и-Bluetooth)
@@ -111,12 +111,12 @@ https://www.raspberrypi.org/documentation/raspbian/updating.md
 `sudo apt-get install htop`  
 `sudo apt-get install ntpstat` - статус NTP, нужен для мониторилки сайта  
 
-### Добавление репозитория buster
-Этот репозиторий нужно добавить, чтобы из него ставить самые свежие версии пакетов с помощью apt-get. Это репозиторий будущей версии Debian. А текущая версия Debian - Stretch (9.8). Посмотреть текущую версию можно командой `lsb_release -a`.  
+### Добавление репозитория bullseye
+Этот репозиторий нужно добавить, чтобы из него ставить самые свежие версии пакетов с помощью apt-get. Это репозиторий будущей версии Debian. А текущая версия Debian - Buster (10). Посмотреть текущую версию можно командой `lsb_release -a`.  
 Итак, в файле `/etc/apt/sources.list` уже есть строчка  
-`deb http://raspbian.raspberrypi.org/raspbian/ stretch main contrib non-free rpi`  
-нужно просто добавить ещё и эту:  
 `deb http://raspbian.raspberrypi.org/raspbian/ buster main contrib non-free rpi`  
+нужно просто добавить ещё и эту:  
+`deb http://raspbian.raspberrypi.org/raspbian/ bullseye main contrib non-free rpi`  
 Сохранить файл и обновить информацию о пакетах  
 `$ sudo apt-get update`
 
