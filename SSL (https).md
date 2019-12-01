@@ -1,5 +1,5 @@
 # Настройка SSL (https) для Nginx
-Настройка SSL для Nginx на Debian 8 с использованием сертификатов Let's Encrypt  
+Настройка SSL для Nginx на Debian с использованием сертификатов Let's Encrypt  
 Источники:  
 https://certbot.eff.org/#debianjessie-nginx  
 https://habrahabr.ru/post/318952/ - статья, по которой всё делал  
