@@ -1,5 +1,5 @@
 # Настройка SSL (https) для Nginx
-Настройка SSL для Nginx на Debian 8 (jessie) с использованием сертификатов Let's Encrypt  
+Настройка SSL для Nginx на Debian 8 с использованием сертификатов Let's Encrypt  
 Источники:  
 https://certbot.eff.org/#debianjessie-nginx  
 https://habrahabr.ru/post/318952/ - статья, по которой всё делал  
@@ -10,19 +10,8 @@ https://certbot.eff.org/docs/using.html#certbot-command-line-options
 https://www.ssllabs.com/ssltest/  
 
 ### Установка Certbot
-_Вариант получше_  
-Подключить репозиторий Debian 9 Stretch (не знаю как) и установить этой командой:  
 `$ sudo apt-get update`  
-`$ sudo apt-get install certbot -t stretch`
-
-_Вариант похуже_  
-Описано тут: https://certbot.eff.org/#debianjessie-nginx  
-Сначала включаем репозиторий Jessie backports repo добавив строчку  
-`deb http://ftp.debian.org/debian jessie-backports main`  
-в файл **sources.list** (or add a new file with the ".list" extension to /etc/apt/sources.list.d/)  
-Теперь можно обновить список пакетов и установить сам Certbot  
-`$ sudo apt-get update`  
-`$ sudo apt-get install certbot -t jessie-backports`
+`$ sudo apt-get install certbot`
 
 ### Настройка
 Запишем основные настройки в файл конфигурации, который certbot ожидает найти в `/etc/letsencrypt/cli.ini:`
