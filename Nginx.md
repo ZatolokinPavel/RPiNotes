@@ -23,4 +23,5 @@ sudo apt-get -t stretch-backports install nginx
 
 ### Настройка  
 По настройке всего nginx глобально ничего конкретного сказать не могу. Надо почитать ещё. Но работает и так.  
-Только нужно удалить символьную ссылку `/etc/nginx/sites-enabled/default` и добавить в эту папку символьную ссылку на свой сайт. А уж конфиг своего сайта как настроить - это отдельная тема. [Смотри тут](https://github.com/ZatolokinPavel/okfilm).  
+Нужно в папку `/var/www/okfilm.com.ua/` скачать свои конфиги [отсюда](https://github.com/ZatolokinPavel/nginx), затем удалить символьную ссылку `/etc/nginx/sites-enabled/default` и добавить в эту папку символьную ссылку на свой конфиг  
+`user@node:/etc/nginx/sites-enabled $ sudo ln -s /var/www/okfilm.com.ua/nginx/nginx.cfg okfilm.com.ua`  
