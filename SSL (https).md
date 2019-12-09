@@ -116,3 +116,7 @@ var scheme = (window.location.protocol == 'https:') ? 'wss://' : 'ws://';
 var host = window.location.host;                    // хост и порт
 ws = new WebSocket(scheme+host+"/back/ws/");
 ```
+
+### Список доменов
+Список доменов, на которые мне нужно получать сертификат. Чтобы не забыть. Лишние можно удалить.  
+`sudo certbot certonly --dry-run --allow-subset-of-names --cert-name okfilm.com.ua -d okfilm.com.ua -d www.okfilm.com.ua -d cdn.okfilm.com.ua -d h.okfilm.com.ua -d f.okfilm.com.ua`
