@@ -17,7 +17,7 @@ _Заметки и инструкции по настройке Raspberry Pi_
 13. Отключить Wi-Fi и Bluetooth [(см. ниже)](#Отключение-Wi-Fi-и-Bluetooth)
 14. [Установить и настроить Nginx.](Nginx.md)
 15. [Настроить SSL для Nginx (https).](SSL%20(https).md)
-16. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm)
+16. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm_2018)
 17. [Установить и настроить Erlang.](Erlang.md)
 18. [Установить и настроить PostgreSQL](PostgreSQL.md)
 19. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
