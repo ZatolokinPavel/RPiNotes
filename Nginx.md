@@ -29,4 +29,4 @@ sudo apt-get -t stretch-backports install nginx
 4. Удалить символьную ссылку `/etc/nginx/sites-enabled/default` и добавить в эту папку символьную ссылку на свой конфиг  
    `sudo ln -s /var/www/okfilm.com.ua/nginx/nginx.cfg /etc/nginx/sites-enabled/okfilm.com.ua`  
 5. Создать папку `/etc/nginx/includes` и добавить туда свои инклуды  
-   `sudo ln -s /var/www/okfilm.com.ua/nginx/includes /etc/nginx/includes/okfilm.com.ua`  
+   `sudo ln -s /var/www/okfilm.com.ua/nginx/includes /etc/nginx/includes/okfilm`  
