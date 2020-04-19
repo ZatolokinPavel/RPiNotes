@@ -26,11 +26,5 @@ sudo apt-get -t stretch-backports install nginx
 1. В папке `/var/www/` создаём папку `okfilm.com.ua/` и устанавливаем её владельцем `pi`.  
 2. В папку `/var/www/okfilm.com.ua/`, скачать свои конфиги [отсюда](https://github.com/ZatolokinPavel/nginx).  
 3. Создать папку `/var/www/okfilm.com.ua/logs/` и устанавливаем её владельцем `pi`.  
-4. Удалить символьную ссылку `/etc/nginx/sites-enabled/default`  
-5. В файл `/etc/nginx/nginx.conf` в раздел "Virtual Host Configs" добавить свой конфиг, а существующие закомментировать:  
-   ```
-   include /var/www/okfilm.com.ua/nginx/nginx.cfg;
-   #include /etc/nginx/conf.d/*.conf;
-   #include /etc/nginx/sites-enabled/*;
-   ```
-*Раньше добавлял символьную ссылку на свой конфиг, но так не работают инклуды*  
+4. Удалить символьную ссылку `/etc/nginx/sites-enabled/default` и добавить в эту папку символьную ссылку на свой конфиг  
+   `user@node:/etc/nginx/sites-enabled $ sudo ln -s /var/www/okfilm.com.ua/nginx/nginx.cfg okfilm.com.ua`  
