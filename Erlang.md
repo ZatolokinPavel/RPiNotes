@@ -1,8 +1,17 @@
 # Установка Erlang на Raspberry Pi
-> На текущий момент самая свежая версия эрланга 21.3.2  
-> На Erlang-Solutions для RaspberryPi есть только 20.1.7  
-> В репозитории buster есть версия 21.2.6  
-> Самую свежую версию нужно собирать самому.  
+> На текущий момент свежая версия эрланга уже больше 24. Мне сейчас нужна не менее 22.    
+> На Erlang-Solutions для RaspberryPi уже есть 22.1.6  
+> В репозитории buster есть версия 21.2.6. В bullseye есть и поновее, но установить оттуда не получается.  
+> В итоге, сейчас выбираю установку из erlang-solutions.  
+
+### Установка из репозитория Erlang-Solutions  
+```
+wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
+sudo dpkg -i erlang-solutions_2.0_all.deb
+rm -f erlang-solutions_2.0_all.deb
+sudo apt-get update
+sudo apt-get install esl-erlang=1:22.1.6-1
+```
 
 ### Установка из репозитория bullseye.  
 > Внимание! Не работает! С buster работало, а с bullseye - нет.  
