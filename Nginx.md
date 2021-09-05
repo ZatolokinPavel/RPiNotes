@@ -26,11 +26,13 @@ sudo apt-get -t stretch-backports install nginx
 </details>
 
 ### Настройка  
-По настройке всего nginx глобально ничего конкретного сказать не могу. Надо почитать ещё. Но работает и так.  
-1. В папке `/var/www/` создаём папку `okfilm.com.ua/` и устанавливаем её владельцем `pi`.  
-2. В папку `/var/www/okfilm.com.ua/`, скачать свои конфиги [отсюда](https://github.com/ZatolokinPavel/nginx).  
-3. Создать папку `/var/www/okfilm.com.ua/logs/` и устанавливаем её владельцем `pi`.  
-4. Удалить символьную ссылку `/etc/nginx/sites-enabled/default` и добавить в эту папку символьную ссылку на свой конфиг  
-   `sudo ln -s /var/www/okfilm.com.ua/nginx/nginx.cfg /etc/nginx/sites-enabled/okfilm.com.ua`  
-5. Создать папку `/etc/nginx/includes` и добавить туда свои инклуды  
-   `sudo ln -s /var/www/okfilm.com.ua/nginx/includes /etc/nginx/includes/okfilm`  
+По настройке всего nginx глобально ничего конкретного сказать не могу. Надо почитать ещё. Но работает и так.   
+1. В папку `/srv/`, скачать свои конфиги [отсюда](https://github.com/ZatolokinPavel/nginx).  
+2. Создать папку `/srv/logs/`. ~~Устанавливаем её владельцем `pi`~~.  
+3. Удалить символьную ссылку `/etc/nginx/sites-enabled/default`
+4. Создать символьную ссылку на основной конфиг
+   `sudo ln -s /srv/nginx/nginx.cfg /etc/nginx/sites-enabled/okfilm.com.ua`
+5. Создать папку `/etc/nginx/includes`
+6. Создать символьную ссылку на мою папку includes
+   `sudo ln -s /srv/nginx/includes/ /etc/nginx/includes/okfilm`
+7. Применить: `sudo nginx -s reload`
