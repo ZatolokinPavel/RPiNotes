@@ -19,7 +19,7 @@ _Заметки и инструкции по настройке Raspberry Pi_
 12. [Настроить часы реального времени.](RTC.md)
 13. [Настроить watchdog.](Watchdog.md)
 14. Отключить Wi-Fi и Bluetooth [(см. ниже)](#Отключение-Wi-Fi-и-Bluetooth)
-15. [Установить и настроить Nginx.](Nginx.md)
+15. (протестить sh) [Установить и настроить Nginx.](Nginx.md)
 16. [Настроить SSL для Nginx (https).](SSL%20(https).md)
 17. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm_2018)
 18. [Установить и настроить Erlang.](Erlang.md)
