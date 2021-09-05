@@ -30,9 +30,9 @@ sudo apt-get -t stretch-backports install nginx
 1. В папку `/srv/`, скачать свои конфиги [отсюда](https://github.com/ZatolokinPavel/nginx).  
 2. Создать папку `/srv/logs/`. ~~Устанавливаем её владельцем `pi`~~.  
 3. Удалить символьную ссылку `/etc/nginx/sites-enabled/default`
-4. Создать символьную ссылку на основной конфиг
+4. Создать символьную ссылку на основной конфиг  
    `sudo ln -s /srv/nginx/nginx.cfg /etc/nginx/sites-enabled/okfilm.com.ua`
 5. Создать папку `/etc/nginx/includes`
-6. Создать символьную ссылку на мою папку includes
+6. Создать символьную ссылку на мою папку includes  
    `sudo ln -s /srv/nginx/includes/ /etc/nginx/includes/okfilm`
 7. Применить: `sudo nginx -s reload`
