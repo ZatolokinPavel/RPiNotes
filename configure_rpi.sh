@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 # Скрипт настройки Raspberry Pi с нуля. Устанавливает и настраивает всё то, что можно сделать через скрипт.
 # Использовать согласно инструкции https://github.com/ZatolokinPavel/RPiNotes
