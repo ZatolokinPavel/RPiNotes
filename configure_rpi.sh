@@ -12,7 +12,14 @@ sudo apt-get clean
 sudo apt-get autoremove
 sudo apt-get autoclean
 
-sudo apt-get install vim mc git htop
+sudo apt-get install vim git htop
+
+# mc
+sudo apt-get install mc crudini
+mkdir -p ~/.config/mc
+touch ~/.config/mc/ini
+crudini --set ~/.config/mc/ini Panels navigate_with_arrows true
+crudini --set ~/.config/mc/ini Midnight-Commander skin dark
 
 # Nginx
 if [[ $(lsb_release -cs) = buster ]]
