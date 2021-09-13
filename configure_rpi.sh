@@ -20,6 +20,10 @@ mkdir -p ~/.config/mc
 touch ~/.config/mc/ini
 crudini --set ~/.config/mc/ini Panels navigate_with_arrows true
 crudini --set ~/.config/mc/ini Midnight-Commander skin dark
+mkdir -p /root/.config/mc
+touch /root/.config/mc/ini
+crudini --set /root/.config/mc/ini Panels navigate_with_arrows true
+crudini --set /root/.config/mc/ini Midnight-Commander skin dark
 
 # Nginx
 if [[ $(lsb_release -cs) = buster ]]
