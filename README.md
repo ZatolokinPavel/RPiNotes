@@ -97,7 +97,7 @@ DO_VCSTIME=yes       # заодно отображать часы в верхн�
 Запуск скрипта:  
 ```shell
 cd
-wget https://git.io/JuDL7
+wget -O configure_rpi.sh https://git.io/JuDL7
 chmod +x ./configure_rpi.sh
 ./configure_rpi.sh
 rm configure_rpi.sh
