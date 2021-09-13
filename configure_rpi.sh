@@ -34,3 +34,10 @@ sudo ln -s /srv/nginx/nginx.cfg /etc/nginx/sites-enabled/okfilm.com.ua
 sudo mkdir /etc/nginx/includes
 sudo ln -s /srv/nginx/includes/ /etc/nginx/includes/okfilm
 sudo nginx -s reload
+
+# letsencrypt SSL (https) (not finished)
+sudo apt-get install certbot
+sudo crudini --set /etc/letsencrypt/cli.ini '' authenticator webroot
+sudo crudini --set /etc/letsencrypt/cli.ini '' webroot-path '/var/www/html'
+sudo crudini --set /etc/letsencrypt/cli.ini '' post-hook 'nginx -s reload'
+sudo crudini --set /etc/letsencrypt/cli.ini '' text True
