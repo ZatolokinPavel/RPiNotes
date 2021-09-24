@@ -24,7 +24,7 @@ sudo apt-get autoremove
 sudo apt-get autoclean
 
 # install some programs
-sudo apt-get install vim git htop
+sudo apt-get install vim git htop i2c-tools
 
 # mc
 sudo apt-get install mc crudini
