@@ -5,6 +5,17 @@
 
 echo "Raspberry Pi configuration starts"
 
+# config dtparams
+sudo sh -c "echo '' >> /boot/config.txt"
+sudo sh -c "echo 'dtoverlay=disable-wifi' >> /boot/config.txt"
+sudo sh -c "echo 'dtoverlay=disable-bt' >> /boot/config.txt"
+sudo systemctl disable hciuart
+sudo sh -c "echo 'dtparam=act_led_activelow=on' >> /boot/config.txt"
+sudo sh -c "echo 'dtoverlay=gpio-shutdown,gpio_pin=21' >> /boot/config.txt"
+sudo sh -c "echo 'dtoverlay=gpio-fan,gpiopin=26,temp=45000' >> /boot/config.txt"
+sudo sh -c "echo 'dtoverlay=i2c-rtc,ds3231' >> /boot/config.txt"
+
+# update all
 sudo apt-get update
 sudo apt-get dist-upgrade
 sudo apt-get upgrade
@@ -12,6 +23,7 @@ sudo apt-get clean
 sudo apt-get autoremove
 sudo apt-get autoclean
 
+# install some programs
 sudo apt-get install vim git htop
 
 # mc
