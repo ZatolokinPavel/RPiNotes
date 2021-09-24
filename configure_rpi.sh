@@ -48,3 +48,10 @@ sudo git clone https://github.com/ZatolokinPavel/okfilm_2018.git /srv/okfilm_201
 sudo mkdir /srv/cdn
 sudo mkdir /srv/shared-global
 sudo chmod 777 /srv/shared-global
+
+# erlang
+wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
+sudo dpkg -i erlang-solutions_2.0_all.deb
+rm -f erlang-solutions_2.0_all.deb
+sudo apt-get update
+sudo apt-get install esl-erlang=1:22.1.6-1
