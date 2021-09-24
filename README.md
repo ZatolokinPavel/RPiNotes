@@ -20,15 +20,16 @@ _Заметки и инструкции по настройке Raspberry Pi_
 13. [Настроить watchdog.](Watchdog.md)
 14. Отключить Wi-Fi и Bluetooth [(см. ниже)](#Отключение-Wi-Fi-и-Bluetooth)
 15. (sh) [Установить и настроить Nginx.](Nginx.md)
-16. (частично sh) [Настроить SSL для Nginx (https).](SSL%20(https).md)
-17. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm_2018)
-18. [Установить и настроить Erlang.](Erlang.md)
-19. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
-20. [Настроить монтирование флешки](USB%20%D1%84%D0%BB%D0%B5%D1%88%D0%BA%D0%B0.md) чтобы хранить там общедоступные файлы.
-21. [Поднять FTP сервер](FTP.md) для загрузки файлов в общую папку.
-22. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
-23. При желании, [включить порт i2c0 на доп. клеммнике P5](Port%20I2C-0.md)
-24. Если надо, установить [Apache, PHP и MySQL](PHP.md)
+16. (sh) [Настроить SSL для Nginx (https).](SSL%20(https).md)
+17. [Вручную получить сертификаты SSL (https), если выполнялся скрипт общей настройки.](SSL%20(https).md#Итого)
+18. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm_2018)
+19. [Установить и настроить Erlang.](Erlang.md)
+20. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
+21. [Настроить монтирование флешки](USB%20%D1%84%D0%BB%D0%B5%D1%88%D0%BA%D0%B0.md) чтобы хранить там общедоступные файлы.
+22. [Поднять FTP сервер](FTP.md) для загрузки файлов в общую папку.
+23. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
+24. При желании, [включить порт i2c0 на доп. клеммнике P5](Port%20I2C-0.md)
+25. Если надо, установить [Apache, PHP и MySQL](PHP.md)
 
 ### Раскладка клавиатуры и локализация консоли
 Взято отсюда http://blackdiver.net/it/linux/777  
