@@ -24,12 +24,13 @@ _Заметки и инструкции по настройке Raspberry Pi_
 17. [Вручную получить сертификаты SSL (https), если выполнялся скрипт общей настройки.](SSL%20(https).md#Итого)
 18. (sh) [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm_2018)
 19. (sh) [Установить Erlang.](Erlang.md)
-20. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
-21. [Настроить монтирование флешки](USB%20%D1%84%D0%BB%D0%B5%D1%88%D0%BA%D0%B0.md) чтобы хранить там общедоступные файлы.
-22. [Поднять FTP сервер](FTP.md) для загрузки файлов в общую папку.
-23. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
-24. При желании, [включить порт i2c0 на доп. клеммнике P5](Port%20I2C-0.md)
-25. Если надо, установить [Apache, PHP и MySQL](PHP.md)
+20. [Скачать и запустить rpi_okfilm_server.](https://github.com/ZatolokinPavel/rpi_okfilm_server)
+21. [Скачать и запустить bus_pidgorodne.](https://github.com/ZatolokinPavel/bus_pidgorodne)
+22. [Настроить монтирование флешки](USB%20%D1%84%D0%BB%D0%B5%D1%88%D0%BA%D0%B0.md) чтобы хранить там общедоступные файлы.
+23. [Поднять FTP сервер](FTP.md) для загрузки файлов в общую папку.
+24. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
+25. При желании, [включить порт i2c0 на доп. клеммнике P5](Port%20I2C-0.md)
+26. Если надо, установить [Apache, PHP и MySQL](PHP.md)
 
 ### Раскладка клавиатуры и локализация консоли
 Взято отсюда http://blackdiver.net/it/linux/777  
