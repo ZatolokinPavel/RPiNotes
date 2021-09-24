@@ -41,6 +41,7 @@ sudo crudini --set /etc/letsencrypt/cli.ini '' authenticator webroot
 sudo crudini --set /etc/letsencrypt/cli.ini '' webroot-path '/var/www/html'
 sudo crudini --set /etc/letsencrypt/cli.ini '' post-hook 'nginx -s reload'
 sudo crudini --set /etc/letsencrypt/cli.ini '' text True
+sudo mkdir -p /var/www/html/.well-known/acme-challenge
 
 # site okfilm.com.ua (not finished)
 sudo git clone https://github.com/ZatolokinPavel/okfilm_2018.git /srv/okfilm_2018
