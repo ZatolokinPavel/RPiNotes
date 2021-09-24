@@ -159,7 +159,7 @@ https://www.raspberrypi.org/documentation/raspbian/updating.md
 История появления этого devicetree overlay [здесь](https://www.stderr.nl/Blog/Hardware/RaspberryPi/PowerButton.html).  
 
 Ещё нужно будет сделать управление кулером через ножку GPIO26. Для этого в файле `/boot/config.txt` нужно прописать  
-`dtoverlay=gpio-fan,gpiopin=26,temp=45000`  
-Таким образом, кулер будет включатся ножкой 37 при температуре процессора 45 градусов цельсия.  
+`dtoverlay=gpio-fan,gpiopin=26,temp=60000`  
+Таким образом, кулер будет включатся ножкой 37 при температуре процессора 60 градусов цельсия. Меньше 60 вроде нельзя ставить.  
 
 О всех остальных devicetree overlay можно почитать здесь: https://github.com/raspberrypi/firmware/blob/master/boot/overlays/README  
