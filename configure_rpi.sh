@@ -5,7 +5,7 @@
 
 echo "Raspberry Pi configuration starts"
 
-# config dtparams
+# configure Device Tree Overlays
 sudo sh -c "echo '' >> /boot/config.txt"
 sudo sh -c "echo 'dtoverlay=disable-wifi' >> /boot/config.txt"
 sudo sh -c "echo 'dtoverlay=disable-bt' >> /boot/config.txt"
