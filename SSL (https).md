@@ -66,7 +66,10 @@ IMPORTANT NOTES:
 `sudo openssl x509 -text -in /etc/letsencrypt/live/example.com/cert.pem`
 
 ### Настройка Nginx
-Теперь осталось только переключить сайт на работу по https. Для этого в блоке **server** соответствующего сайта добавляем вот эти директивы:
+<details>
+  <summary>Эти настройки уже прописаны в моём конфиге nginx.</summary>
+
+Необходимо доработать конфиг, чтобы переключить сайт на работу по https. Для этого в блоке **server** соответствующего сайта добавляем вот эти директивы:
 ```nginx
 server {
     # === server_name и listen которые уже были ===
@@ -106,6 +109,8 @@ server {
     return 301 https://okfilm.com.ua$request_uri;
 }
 ```
+
+</details>
 
 ### Исправление соединения WebSocket
 Если до этого на javascript соединение WebSocket устанавливалось такой командой:  
