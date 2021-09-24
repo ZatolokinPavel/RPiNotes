@@ -55,3 +55,6 @@ sudo dpkg -i erlang-solutions_2.0_all.deb
 rm -f erlang-solutions_2.0_all.deb
 sudo apt-get update
 sudo apt-get install esl-erlang=1:22.1.6-1
+
+# rpi_okfilm_server
+sudo git clone https://github.com/ZatolokinPavel/rpi_okfilm_server.git /opt/rpi_okfilm_server
