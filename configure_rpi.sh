@@ -12,7 +12,7 @@ sudo sh -c "echo 'dtoverlay=disable-bt' >> /boot/config.txt"
 sudo systemctl disable hciuart
 sudo sh -c "echo 'dtparam=act_led_activelow=on' >> /boot/config.txt"
 sudo sh -c "echo 'dtoverlay=gpio-shutdown,gpio_pin=21' >> /boot/config.txt"
-sudo sh -c "echo 'dtoverlay=gpio-fan,gpiopin=26,temp=45000' >> /boot/config.txt"
+sudo sh -c "echo 'dtoverlay=gpio-fan,gpiopin=26,temp=60000' >> /boot/config.txt"
 sudo sh -c "echo 'dtoverlay=i2c-rtc,ds3231' >> /boot/config.txt"
 
 # update all
