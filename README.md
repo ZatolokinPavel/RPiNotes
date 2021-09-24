@@ -19,18 +19,19 @@ _Заметки и инструкции по настройке Raspberry Pi_
 12. [Настроить часы реального времени.](RTC.md)
 13. [Настроить watchdog.](Watchdog.md)
 14. Отключить Wi-Fi и Bluetooth [(см. ниже)](#Отключение-Wi-Fi-и-Bluetooth)
-15. (sh) [Установить и настроить Nginx.](Nginx.md)
-16. (sh) [Настроить SSL для Nginx (https).](SSL%20(https).md)
-17. [Вручную получить сертификаты SSL (https), если выполнялся скрипт общей настройки.](SSL%20(https).md#Итого)
-18. (sh) [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm_2018)
-19. (sh) [Установить Erlang.](Erlang.md)
-20. [Скачать и запустить rpi_okfilm_server.](https://github.com/ZatolokinPavel/rpi_okfilm_server)
-21. [Скачать и запустить bus_pidgorodne.](https://github.com/ZatolokinPavel/bus_pidgorodne)
-22. [Настроить монтирование флешки](USB%20%D1%84%D0%BB%D0%B5%D1%88%D0%BA%D0%B0.md) чтобы хранить там общедоступные файлы.
-23. [Поднять FTP сервер](FTP.md) для загрузки файлов в общую папку.
-24. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
-25. При желании, [включить порт i2c0 на доп. клеммнике P5](Port%20I2C-0.md)
-26. Если надо, установить [Apache, PHP и MySQL](PHP.md)
+15. Применить дополнительные настройки [(см. ниже)](#Дополнительные-настройки)
+16. (sh) [Установить и настроить Nginx.](Nginx.md)
+17. (sh) [Настроить SSL для Nginx (https).](SSL%20(https).md)
+18. [Вручную получить сертификаты SSL (https), если выполнялся скрипт общей настройки.](SSL%20(https).md#Итого)
+19. (sh) [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm_2018)
+20. (sh) [Установить Erlang.](Erlang.md)
+21. [Скачать и запустить rpi_okfilm_server.](https://github.com/ZatolokinPavel/rpi_okfilm_server)
+22. [Скачать и запустить bus_pidgorodne.](https://github.com/ZatolokinPavel/bus_pidgorodne)
+23. [Настроить монтирование флешки](USB%20%D1%84%D0%BB%D0%B5%D1%88%D0%BA%D0%B0.md) чтобы хранить там общедоступные файлы.
+24. [Поднять FTP сервер](FTP.md) для загрузки файлов в общую папку.
+25. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
+26. При желании, [включить порт i2c0 на доп. клеммнике P5](Port%20I2C-0.md)
+27. Если надо, установить [Apache, PHP и MySQL](PHP.md)
 
 ### Раскладка клавиатуры и локализация консоли
 Взято отсюда http://blackdiver.net/it/linux/777  
