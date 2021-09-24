@@ -134,6 +134,8 @@ ws = new WebSocket(scheme+host+"/back/ws/");
    0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(43200))' && certbot -q --allow-subset-of-names renew
    ```
 3. Получить сертификат в тестовом режиме на все домены    
-   `sudo certbot certonly --dry-run --allow-subset-of-names --cert-name okfilm.com.ua -d okfilm.com.ua -d www.okfilm.com.ua -d cdn.okfilm.com.ua -d h.okfilm.com.ua -d f.okfilm.com.ua -d bus-pidgorodne.dp.ua -d www.bus-pidgorodne.dp.ua -d h.bus-pidgorodne.dp.ua -d f.bus-pidgorodne.dp.ua`  
+   ```sh
+   sudo certbot certonly --dry-run --allow-subset-of-names --cert-name okfilm.com.ua -d okfilm.com.ua -d www.okfilm.com.ua -d cdn.okfilm.com.ua -d h.okfilm.com.ua -d f.okfilm.com.ua -d bus-pidgorodne.dp.ua -d www.bus-pidgorodne.dp.ua -d h.bus-pidgorodne.dp.ua -d f.bus-pidgorodne.dp.ua
+   ```  
 4. Получить реальные сертификаты. Для этого выполнить предыдущую команду без ключа `--dry-run`.  
 5. Готово.  
