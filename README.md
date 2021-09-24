@@ -22,7 +22,7 @@ _Заметки и инструкции по настройке Raspberry Pi_
 15. (sh) [Установить и настроить Nginx.](Nginx.md)
 16. (sh) [Настроить SSL для Nginx (https).](SSL%20(https).md)
 17. [Вручную получить сертификаты SSL (https), если выполнялся скрипт общей настройки.](SSL%20(https).md#Итого)
-18. [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm_2018)
+18. (sh) [Скачать сайт okfilm.com.ua и подключить его к Nginx.](https://github.com/ZatolokinPavel/okfilm_2018)
 19. [Установить и настроить Erlang.](Erlang.md)
 20. [Скачать и запустить backend на эрланге.](https://github.com/ZatolokinPavel/raspberry_server)
 21. [Настроить монтирование флешки](USB%20%D1%84%D0%BB%D0%B5%D1%88%D0%BA%D0%B0.md) чтобы хранить там общедоступные файлы.
