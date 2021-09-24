@@ -9,6 +9,8 @@ https://certbot.eff.org/docs/using.html#certbot-command-line-options
 Проверка SSL  
 https://www.ssllabs.com/ssltest/  
 
+> Если выполнял общий скрипт настройки, то смотри сразу в [самый низ](#Итого)  
+
 ### Установка Certbot
 `$ sudo apt-get update`  
 `$ sudo apt-get install certbot`
@@ -122,6 +124,16 @@ var host = window.location.host;                    // хост и порт
 ws = new WebSocket(scheme+host+"/back/ws/");
 ```
 
-### Список доменов
-Список доменов, на которые мне нужно получать сертификат. Чтобы не забыть. Лишние можно удалить.  
-`sudo certbot certonly --dry-run --allow-subset-of-names --cert-name okfilm.com.ua -d okfilm.com.ua -d www.okfilm.com.ua -d cdn.okfilm.com.ua -d h.okfilm.com.ua -d f.okfilm.com.ua -d bus-pidgorodne.dp.ua -d www.bus-pidgorodne.dp.ua -d h.bus-pidgorodne.dp.ua -d f.bus-pidgorodne.dp.ua`
+### Итого
+После выполнения общего [скрипта настройки](https://github.com/ZatolokinPavel/RPiNotes#Скрипт-настройки), нужно будет вручную выполнить следующее:  
+1. Зарегистрироваться  
+   `$ sudo certbot register --email me@example.com`  
+2. В крон добавить ключ `--allow-subset-of-names`  
+   ```bash
+   # последняя строка в /etc/cron.d/certbot
+   0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(43200))' && certbot -q --allow-subset-of-names renew
+   ```
+3. Получить сертификат в тестовом режиме на все домены    
+   `sudo certbot certonly --dry-run --allow-subset-of-names --cert-name okfilm.com.ua -d okfilm.com.ua -d www.okfilm.com.ua -d cdn.okfilm.com.ua -d h.okfilm.com.ua -d f.okfilm.com.ua -d bus-pidgorodne.dp.ua -d www.bus-pidgorodne.dp.ua -d h.bus-pidgorodne.dp.ua -d f.bus-pidgorodne.dp.ua`  
+4. Получить реальные сертификаты. Для этого выполнить предыдущую команду без ключа `--dry-run`.  
+5. Готово.  
