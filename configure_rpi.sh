@@ -35,7 +35,7 @@ sudo mkdir /etc/nginx/includes
 sudo ln -s /srv/nginx/includes/ /etc/nginx/includes/okfilm
 sudo nginx -s reload
 
-# letsencrypt SSL (https) (not finished)
+# letsencrypt SSL (https) (not all commands)
 sudo apt-get install certbot
 sudo crudini --set /etc/letsencrypt/cli.ini '' authenticator webroot
 sudo crudini --set /etc/letsencrypt/cli.ini '' webroot-path '/var/www/html'
@@ -43,7 +43,7 @@ sudo crudini --set /etc/letsencrypt/cli.ini '' post-hook 'nginx -s reload'
 sudo crudini --set /etc/letsencrypt/cli.ini '' text True
 sudo mkdir -p /var/www/html/.well-known/acme-challenge
 
-# site okfilm.com.ua (not finished)
+# site okfilm.com.ua
 sudo git clone https://github.com/ZatolokinPavel/okfilm_2018.git /srv/okfilm_2018
 sudo mkdir /srv/cdn
 sudo mkdir /srv/shared-global
