@@ -61,9 +61,10 @@ sudo mkdir /srv/cdn
 sudo mkdir /srv/shared-global
 sudo chmod 777 /srv/shared-global
 
-# erlang
-wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
-sudo dpkg -i erlang-solutions_2.0_all.deb
-rm -f erlang-solutions_2.0_all.deb
-sudo apt-get update
-sudo apt-get install esl-erlang=1:22.1.6-1
+# erlang 23.2.6
+sudo apt-get install erlang
+#wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
+#sudo dpkg -i erlang-solutions_2.0_all.deb
+#rm -f erlang-solutions_2.0_all.deb
+#sudo apt-get update
+#sudo apt-get install esl-erlang=1:22.1.6-1
