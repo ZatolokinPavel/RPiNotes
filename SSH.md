@@ -37,7 +37,7 @@ PermitRootLogin no          # запрещено заходить под рут�
 StrictModes yes             # проверка прав и владение домашним каталогом пользователя
 #MaxAuthTries 6
 #MaxSessions 10
-AllowUsers pi               # по ssh разрешено заходить ТОЛЬКО пользователю 'pi'
+AllowUsers pi okfilm        # по ssh разрешено заходить ТОЛЬКО пользователю 'pi'
 
 PubkeyAuthentication yes    # аутентификация по открытому ключу
 
@@ -125,6 +125,11 @@ Subsystem	sftp internal-sftp -f AUTH -l VERBOSE   # встроенный луч�
 #	AllowTcpForwarding no
 #	PermitTTY no
 #	ForceCommand cvs server
+Match user okfilm
+    ChrootDirectory /mnt/okusb
+    ForceCommand internal-sftp
+    AllowTcpForwarding no
+    X11Forwarding no
 ```
 Проверить правильность конфига можно командой `sshd -t`  
 Показать все-все задействованные опции можно командой `sshd -T`  
