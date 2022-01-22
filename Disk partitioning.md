@@ -44,3 +44,31 @@ Device         Boot  Start      End  Sectors  Size Id Type
 В принципе, монтирование раздела описано тут:
 [монтирование флешки](https://github.com/ZatolokinPavel/RPiNotes/blob/master/USB%20%D1%84%D0%BB%D0%B5%D1%88%D0%BA%D0%B0.md).
 Приведу те же инструкции, но с поправкой на диск.  
+
+Итак, сначала создаём папку `/mnt/okusb/`  
+Затем, создаём файл `/etc/systemd/system/mnt-okdisk.mount`  
+```
+[Unit]
+Description=OkFILM global share
+[Mount]
+What=/dev/mmcblk0p3
+Where=/mnt/okdisk
+Type=ext4
+Options=defaults
+DirectoryMode=0755
+[Install]
+WantedBy=multi-user.target
+```
+и файл автомонтирования `/etc/systemd/system/mnt-okdisk.automount`  
+```
+[Unit]
+Description=OkFILM global share
+[Automount]
+Where=/mnt/okdisk
+[Install]
+WantedBy=multi-user.target
+```
+Теперь эти файлы нужно подключить:  
+`sudo systemctl enable mnt-okdisk.mount`  
+`sudo systemctl enable mnt-okdisk.automount`  
+Всё готово.
