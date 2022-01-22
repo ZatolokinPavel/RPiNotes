@@ -126,7 +126,7 @@ Subsystem	sftp internal-sftp -f AUTH -l VERBOSE   # встроенный луч�
 #	PermitTTY no
 #	ForceCommand cvs server
 Match user okfilm
-    ChrootDirectory /mnt/okusb
+    ChrootDirectory /mnt/okdisk
     ForceCommand internal-sftp
     AllowTcpForwarding no
     X11Forwarding no
