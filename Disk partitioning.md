@@ -45,7 +45,7 @@ Device         Boot  Start      End  Sectors  Size Id Type
 [монтирование флешки](https://github.com/ZatolokinPavel/RPiNotes/blob/master/USB%20%D1%84%D0%BB%D0%B5%D1%88%D0%BA%D0%B0.md).
 Приведу те же инструкции, но с поправкой на диск.  
 
-Итак, сначала создаём папку `/mnt/okusb/`  
+Итак, сначала создаём папку `/mnt/okdisk/`  
 Затем, создаём файл `/etc/systemd/system/mnt-okdisk.mount`  
 ```
 [Unit]
