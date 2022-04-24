@@ -28,11 +28,10 @@ _Заметки и инструкции по настройке Raspberry Pi_
 21. (sh) [Установить Erlang.](Erlang.md)
 22. [Скачать и запустить rpi_okfilm_server.](https://github.com/ZatolokinPavel/rpi_okfilm_server)
 23. [Скачать и запустить bus_pidgorodne.](https://github.com/ZatolokinPavel/bus_pidgorodne)
-24. [Настроить монтирование флешки](USB%20%D1%84%D0%BB%D0%B5%D1%88%D0%BA%D0%B0.md) чтобы хранить там общедоступные файлы.
-25. [Поднять FTP сервер](FTP.md) для загрузки файлов в общую папку.
-26. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
-27. При желании, [включить порт i2c0 на доп. клеммнике P5](Port%20I2C-0.md)
-28. Если надо, установить [Apache, PHP и MySQL](PHP.md)
+24. [Поднять FTP сервер](FTP.md) для загрузки файлов в общую папку.
+25. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
+26. При желании, [включить порт i2c0 на доп. клеммнике P5](Port%20I2C-0.md)
+27. Если надо, установить [Apache, PHP и MySQL](PHP.md)
 
 ### Установка операционной системы Raspberry Pi OS Lite
 Скачать с [офф. сайта](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-32-bit) и записать на флешку с помощью **Win32DiskImager**.  
