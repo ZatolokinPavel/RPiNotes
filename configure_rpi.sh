@@ -43,6 +43,33 @@ sudo resize2fs /dev/mmcblk0p2
 sudo parted /dev/mmcblk0 -- mkpart primary ext4 17GB -1s
 sudo mkfs.ext4 -L okdisk /dev/mmcblk0p3
 
+# partition mount
+sudo mkdir /mnt/okdisk/
+cat << EOF > /etc/systemd/system/mnt-okdisk.mount
+[Unit]
+Description=OkFILM global share
+[Mount]
+What=/dev/mmcblk0p3
+Where=/mnt/okdisk
+Type=ext4
+Options=defaults
+DirectoryMode=0755
+[Install]
+WantedBy=multi-user.target
+EOF
+
+cat << EOF > /etc/systemd/system/mnt-okdisk.automount
+[Unit]
+Description=OkFILM global share
+[Automount]
+Where=/mnt/okdisk
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl enable mnt-okdisk.mount
+sudo systemctl enable mnt-okdisk.automount
+
 # Nginx
 sudo apt-get install nginx
 sudo git clone https://github.com/ZatolokinPavel/nginx.git /srv/nginx
