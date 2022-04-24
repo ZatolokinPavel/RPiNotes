@@ -45,7 +45,7 @@ sudo mkfs.ext4 -L okdisk /dev/mmcblk0p3
 
 # partition mount
 sudo mkdir /mnt/okdisk/
-cat << EOF > /etc/systemd/system/mnt-okdisk.mount
+sudo sh -c "cat << EOF > /etc/systemd/system/mnt-okdisk.mount
 [Unit]
 Description=OkFILM global share
 [Mount]
@@ -56,17 +56,15 @@ Options=defaults
 DirectoryMode=0755
 [Install]
 WantedBy=multi-user.target
-EOF
-
-cat << EOF > /etc/systemd/system/mnt-okdisk.automount
+EOF"
+sudo sh -c "cat << EOF > /etc/systemd/system/mnt-okdisk.automount
 [Unit]
 Description=OkFILM global share
 [Automount]
 Where=/mnt/okdisk
 [Install]
 WantedBy=multi-user.target
-EOF
-
+EOF"
 sudo systemctl enable mnt-okdisk.mount
 sudo systemctl enable mnt-okdisk.automount
 
