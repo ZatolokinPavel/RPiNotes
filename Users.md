@@ -27,7 +27,7 @@ http://forum.ispsystem.ru/showthread.php?3528-Доступ-по-SSH-в-chroot-о
    И в самый конец нужно добавить следующие строки:  
    ```
    Match user okfilm
-       ChrootDirectory /mnt/okusb
+       ChrootDirectory /mnt/okdisk
        ForceCommand internal-sftp
        AllowTcpForwarding no
        X11Forwarding no
