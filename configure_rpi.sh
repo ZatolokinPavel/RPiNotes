@@ -37,6 +37,12 @@ sudo -u root touch /root/.config/mc/ini
 sudo crudini --set /root/.config/mc/ini Panels navigate_with_arrows true
 sudo crudini --set /root/.config/mc/ini Midnight-Commander skin dark
 
+# Disk partitioning
+sudo parted /dev/mmcblk0 resizepart 2 17453MB
+sudo resize2fs /dev/mmcblk0p2
+sudo parted /dev/mmcblk0 -- mkpart primary ext4 17GB -1s
+sudo mkfs.ext4 -L okdisk /dev/mmcblk0p3
+
 # Nginx
 sudo apt-get install nginx
 sudo git clone https://github.com/ZatolokinPavel/nginx.git /srv/nginx
