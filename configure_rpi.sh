@@ -67,6 +67,7 @@ WantedBy=multi-user.target
 EOF"
 sudo systemctl enable mnt-okdisk.mount
 sudo systemctl enable mnt-okdisk.automount
+sudo mount /dev/mmcblk0p3 /mnt/okdisk
 
 # Nginx
 sudo apt-get install nginx
@@ -89,8 +90,10 @@ sudo mkdir -p /var/www/html/.well-known/acme-challenge
 # site okfilm.com.ua
 sudo git clone https://github.com/ZatolokinPavel/okfilm_2018.git /srv/okfilm_2018
 sudo mkdir /srv/cdn
-sudo mkdir /srv/shared-global
-sudo chmod 777 /srv/shared-global
+#sudo mkdir /srv/shared-global
+sudo mkdir /mnt/okdisk/shared-global
+sudo chmod 777 /mnt/okdisk/shared-global
+sudo ln -s /mnt/okdisk/shared-global/ /srv/shared-global
 
 # erlang 23.2.6
 sudo apt-get install erlang
