@@ -64,4 +64,4 @@ Device         Boot  Start      End  Sectors  Size Id Type
 
 ## Раздел создан, теперь нужно настроить его монтирование.  
 Монтирование раздела описано тут:
-[Монтирование диска или флешки](https://github.com/ZatolokinPavel/RPiNotes/blob/master/%D0%9C%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%B8%D1%81%D0%BA%D0%B0%20%D0%B8%D0%BB%D0%B8%20%D1%84%D0%BB%D0%B5%D1%88%D0%BA%D0%B8.md).
+[монтирование диска или флешки](https://github.com/ZatolokinPavel/RPiNotes/blob/master/%D0%9C%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%B8%D1%81%D0%BA%D0%B0%20%D0%B8%D0%BB%D0%B8%20%D1%84%D0%BB%D0%B5%D1%88%D0%BA%D0%B8.md).
