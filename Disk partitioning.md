@@ -16,10 +16,10 @@
 2 - 1745MB ext4  
 Это то, что было заложено в образе Raspberry Pi OS Lite изначально.  
 
-Увеличиваем root раздел
+Увеличиваем root раздел до отметки 17180MB + 273MB
 ```
 sudo parted /dev/mmcblk0
-(parted) resizepart 2 16273MB
+(parted) resizepart 2 17453MB
 (parted) print
 (parted) quit
 ```
