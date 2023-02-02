@@ -133,9 +133,11 @@ ws = new WebSocket(scheme+host+"/back/ws/");
    # последняя строка в /etc/cron.d/certbot
    0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(43200))' && certbot -q --allow-subset-of-names renew
    ```
-3. Получить сертификат в тестовом режиме на все домены    
+3. Как-то настроить nginx на работу без сертификатов. В каждом server убрать ssl и закоментарить пути к сертификатам.  
+4. Получить сертификат в тестовом режиме на все домены    
    ```sh
    sudo certbot certonly --dry-run --allow-subset-of-names --cert-name okfilm.com.ua -d okfilm.com.ua -d www.okfilm.com.ua -d cdn.okfilm.com.ua -d h.okfilm.com.ua -d f.okfilm.com.ua -d bus-pidgorodne.dp.ua -d www.bus-pidgorodne.dp.ua -d h.bus-pidgorodne.dp.ua -d f.bus-pidgorodne.dp.ua
    ```  
-4. Получить реальные сертификаты. Для этого выполнить предыдущую команду без ключа `--dry-run`.  
-5. Готово.  
+5. Получить реальные сертификаты. Для этого выполнить предыдущую команду без ключа `--dry-run`.  
+6. Откатить изменения в конфиге nginx с помощью git и `sudo nginx -s reload`.  
+7. Готово.  
