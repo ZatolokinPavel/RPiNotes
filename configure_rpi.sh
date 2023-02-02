@@ -15,6 +15,12 @@ sudo sh -c "echo 'dtoverlay=gpio-shutdown,gpio_pin=21' >> /boot/config.txt"
 sudo sh -c "echo 'dtoverlay=gpio-fan,gpiopin=26,temp=60000' >> /boot/config.txt"
 sudo sh -c "echo 'dtoverlay=i2c-rtc,ds3231' >> /boot/config.txt"
 
+# Disk partitioning
+sudo parted /dev/mmcblk0 resizepart 2 17453MB
+sudo resize2fs /dev/mmcblk0p2
+sudo parted /dev/mmcblk0 -- mkpart primary ext4 17GB -1s
+sudo mkfs.ext4 -L okdisk /dev/mmcblk0p3
+
 # update all
 sudo apt-get update
 sudo apt-get dist-upgrade
@@ -36,12 +42,6 @@ sudo -u root mkdir -p /root/.config/mc
 sudo -u root touch /root/.config/mc/ini
 sudo crudini --set /root/.config/mc/ini Panels navigate_with_arrows true
 sudo crudini --set /root/.config/mc/ini Midnight-Commander skin dark
-
-# Disk partitioning
-sudo parted /dev/mmcblk0 resizepart 2 17453MB
-sudo resize2fs /dev/mmcblk0p2
-sudo parted /dev/mmcblk0 -- mkpart primary ext4 17GB -1s
-sudo mkfs.ext4 -L okdisk /dev/mmcblk0p3
 
 # partition mount
 sudo mkdir /mnt/okdisk/
