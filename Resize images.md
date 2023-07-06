@@ -6,3 +6,5 @@
 ### Установка
 Не самая свежая версия, но пока мне всё равно.  
 `sudo apt-get install imagemagick`  
+Это будет установлена версия ImageMagick 6.9.11, в то время как самая свежая сейчас 7.1.1  
+Для версии 6 документацию нужно искать на [legacy.imagemagick.org](https://legacy.imagemagick.org/)  
