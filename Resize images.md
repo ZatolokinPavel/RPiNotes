@@ -31,3 +31,5 @@
 Логи будут в файле /var/log/cron.log  
 Если нужно перенаправить вывод скрипта в файл, то записываем крон вот так:  
 `*/1 * * * * /srv/okfilm_2018/utilities/resize_shared_images.sh >> /home/okfilm/resize_cron.log 2>&1`  
+
+Настраивать правило для крона удобно тут: https://crontab.guru/
