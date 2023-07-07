@@ -10,5 +10,16 @@
 Для версии 6 документацию нужно искать на [legacy.imagemagick.org](https://legacy.imagemagick.org/)  
 
 ### Подключение
-Скрипт надодится в проекте **okfilm_2018** по пути `utilities/resize_shared_images.sh`.
-Для подключения его нужно добавить в крон системы.
+Скрипт надодится в проекте **okfilm_2018** по пути `utilities/resize_shared_images.sh`.  
+Для его подключения нужно добавить задачу в крон. При чём в крон пользователся okfilm, он же пользуется сетевым диском.  
+
+Посмотреть список уже добавленных кронов пользователя:  
+`sudo crontab -u okfilm -l`  
+
+Добавить новый крон вручную:  
+сначала нужно установить пользователя okfilm владельцем скрипта
+`sudo chown okfilm:okfilm /srv/okfilm_2018/utilities/resize_shared_images.sh`  
+затем открыть редактор задач крона  
+`sudo crontab -u okfilm -e`  
+и прописать задачу  
+`*/1 * * * * /bin/sh /srv/okfilm_2018/utilities/resize_shared_images.sh`  
