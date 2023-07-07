@@ -8,3 +8,7 @@
 `sudo apt-get install imagemagick`  
 Это будет установлена версия ImageMagick 6.9.11, в то время как самая свежая сейчас 7.1.1  
 Для версии 6 документацию нужно искать на [legacy.imagemagick.org](https://legacy.imagemagick.org/)  
+
+### Подключение
+Скрипт надодится в проекте **okfilm_2018** по пути `utilities/resize_shared_images.sh`.
+Для подключения его нужно добавить в крон системы.
