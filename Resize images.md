@@ -17,7 +17,7 @@
 `sudo crontab -u okfilm -l`  
 
 Добавить новый крон вручную:  
-сначала нужно установить пользователя okfilm владельцем скрипта
+сначала нужно установить пользователя okfilm владельцем скрипта  
 `sudo chown okfilm:okfilm /srv/okfilm_2018/utilities/resize_shared_images.sh`  
 затем открыть редактор задач крона  
 `sudo crontab -u okfilm -e`  
