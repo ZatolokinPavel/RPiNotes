@@ -23,3 +23,9 @@
 `sudo crontab -u okfilm -e`  
 и прописать задачу  
 `*/1 * * * * /bin/sh /srv/okfilm_2018/utilities/resize_shared_images.sh`  
+
+### Отладка крона
+Включить логирование срабатываний крона `sudo nano /etc/rsyslog.conf`  
+в этом файле раскомментировать строку `#cron.*                          /var/log/cron.log`  
+после чего перезапустить сервис `sudo service rsyslog restart`.  
+Логи будут в файле /var/log/cron.log  
