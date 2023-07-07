@@ -22,7 +22,7 @@
 затем открыть редактор задач крона  
 `sudo crontab -u okfilm -e`  
 и прописать задачу  
-`*/1 * * * * /srv/okfilm_2018/utilities/resize_shared_images.sh`  
+`*/5 * * * * /srv/okfilm_2018/utilities/resize_shared_images.sh`  
 
 ### Отладка крона
 Включить логирование срабатываний крона `sudo nano /etc/rsyslog.conf`  
