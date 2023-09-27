@@ -1,6 +1,6 @@
 <svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
-    <rect x="0" y="0" width="100%" height="100%" fill="rgba(255,255,255,0.7)" />
-    
+    <rect x="0" y="0" width="100%" height="100%" fill="rgba(55,255,255,0.8)" />
+
     <defs>
         <marker id="connection" viewBox="0 0 6 6" refX="3" refY="3" markerWidth="6" markerHeight="6" orient="auto">
             <circle cx="3" cy="3" r="2.5" fill="black"/>
@@ -38,7 +38,7 @@
     </g>
 
     <!-- Выход на нагрузку -->
-    <polyline points="330 35, 380 35" stroke="black" fill="transparent" stroke-width="2" marker-end="url(#arrow)" />
+    <polyline points="330 35, 385 35" stroke="black" fill="transparent" stroke-width="2" marker-end="url(#arrow)" />
 
     <!-- Модуль заряда -->
     <g>
