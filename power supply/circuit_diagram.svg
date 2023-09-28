@@ -53,8 +53,10 @@
     <!-- От модуля заряда на BMS -->
     <polyline points="250 175, 90 175" stroke="black" fill="transparent" stroke-width="2" />
 
-    <!-- От BMS на преобразователь (от аккумулятора на нагрузку) -->
-    <polyline points="180 175, 180 95, 180 35" stroke="black" fill="transparent" stroke-width="2" marker-start="url(#connection)" marker-mid="url(#diode)" marker-end="url(#connection)" />
+    <!-- От BMS на преобразователь (от аккумулятора на нагрузку), с выключателем -->
+    <polyline points="180 175, 180 150, 170 130" stroke="black" fill="transparent" stroke-width="2" marker-start="url(#connection)" />
+    <polyline points="168 135, 181 135" stroke="black" fill="transparent" stroke-width="2" />
+    <polyline points="180 135, 180 95, 180 35" stroke="black" fill="transparent" stroke-width="2" marker-mid="url(#diode)" marker-end="url(#connection)" />
 
     <!-- BMS (плата защиты аккумулятора) -->
     <g>
