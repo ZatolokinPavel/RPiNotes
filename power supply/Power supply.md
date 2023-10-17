@@ -45,6 +45,11 @@
       <td>0.10 Ом</td>
       <td>1 x R100 0.5W (SMD 1210)</td>
     </tr>
+    <tr>
+      <td>? A</td>
+      <td>0.041 Ом</td>
+      <td>2 x R082 0.5W (SMD 1210)</td>
+    </tr>
   </tbody>
 </table>
 
