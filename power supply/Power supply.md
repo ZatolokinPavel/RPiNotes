@@ -36,7 +36,7 @@
   </thead>
   <tbody>
     <tr>
-      <td>0.7 A</td>
+      <td>0.55 A</td>
       <td>0.220 Ом</td>
       <td>1 x R220 0.5W (SMD 1210)</td>
     </tr>
