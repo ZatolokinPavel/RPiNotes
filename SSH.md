@@ -20,9 +20,9 @@ AddressFamily inet          # слушаем только IPv4 адреса (т�
 Protocol 2                  # используй только вторую версию протокола
 
 # HostKeys for protocol version 2
-HostKey /etc/ssh/ssh_host_rsa_key
-HostKey /etc/ssh/ssh_host_ecdsa_key
-HostKey /etc/ssh/ssh_host_ed25519_key
+#HostKey /etc/ssh/ssh_host_rsa_key
+#HostKey /etc/ssh/ssh_host_ecdsa_key
+#HostKey /etc/ssh/ssh_host_ed25519_key
 
 # Ciphers and keying
 RekeyLimit default none     # ротация сеансового ключа по объёму трафика и по вермени
