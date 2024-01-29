@@ -6,14 +6,14 @@
 echo "Raspberry Pi configuration starts"
 
 # configure Device Tree Overlays
-sudo sh -c "echo '' >> /boot/config.txt"
-sudo sh -c "echo 'dtoverlay=disable-wifi' >> /boot/config.txt"
-sudo sh -c "echo 'dtoverlay=disable-bt' >> /boot/config.txt"
+sudo sh -c "echo '' >> /boot/firmware/config.txt"
+sudo sh -c "echo 'dtoverlay=disable-wifi' >> /boot/firmware/config.txt"
+sudo sh -c "echo 'dtoverlay=disable-bt' >> /boot/firmware/config.txt"
 sudo systemctl disable hciuart
-sudo sh -c "echo 'dtparam=act_led_activelow=on' >> /boot/config.txt"
-sudo sh -c "echo 'dtoverlay=gpio-shutdown,gpio_pin=21' >> /boot/config.txt"
-sudo sh -c "echo 'dtoverlay=gpio-fan,gpiopin=26,temp=60000' >> /boot/config.txt"
-sudo sh -c "echo 'dtoverlay=i2c-rtc,ds3231' >> /boot/config.txt"
+sudo sh -c "echo 'dtparam=act_led_activelow=on' >> /boot/firmware/config.txt"
+sudo sh -c "echo 'dtoverlay=gpio-shutdown,gpio_pin=21' >> /boot/firmware/config.txt"
+sudo sh -c "echo 'dtoverlay=gpio-fan,gpiopin=26,temp=60000' >> /boot/firmware/config.txt"
+sudo sh -c "echo 'dtoverlay=i2c-rtc,ds3231' >> /boot/firmware/config.txt"
 
 # Disk partitioning
 sudo parted /dev/mmcblk0 resizepart 2 17453MB
