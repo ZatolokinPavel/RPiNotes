@@ -136,7 +136,8 @@ Match user okfilm
 
 ### Сертификаты для SSH
 Сгенерировать пару публичный + приватный ключ командой  
-`ssh-keygen -t rsa -b 4096`
+`ssh-keygen -t ed25519 -C "user@server"` - новый, быстрый, более стойкий чем RSA 2048 bits  
+`ssh-keygen -t rsa -b 4096 -C "user@server"` - старый, медленный, но большей длины  
 
 > Преобразовывать приватный ключ в формат PKCS#8 не стоит. Всё равно PuTTY не поддерживает его. Но, если что, команда вот:   
 > `openssl pkcs8 -topk8 -v2 des3 -in ~/.ssh/id_rsa.old -out ~/.ssh/id_rsa`
