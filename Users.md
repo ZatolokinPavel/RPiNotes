@@ -56,7 +56,13 @@ http://forum.ispsystem.ru/showthread.php?3528-Доступ-по-SSH-в-chroot-о
        AllowTcpForwarding no
        X11Forwarding no
    ```
-6. Перезапускам sshd `$ sudo service ssh restart`  
+6. Перезапускам sshd `$ sudo service ssh restart`
+7. Разрешаем пользователю devops некоторые команды sudo без пароля:
+   `sudo visudo`
+   ```
+   devops ALL=(ALL:ALL) NOPASSWD: /bin/rsync
+   devops ALL=(ALL:ALL) NOPASSWD: /usr/sbin/service rpi_okfilm_server release
+   ```
 
 ### Изменение данных пользователя  
 `chfn [параметры] [ПОЛЬЗОВАТЕЛЬ]` - поменять параметры GECOS для пользователя  
