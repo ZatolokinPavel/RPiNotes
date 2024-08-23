@@ -40,9 +40,10 @@ http://forum.ispsystem.ru/showthread.php?3528-Доступ-по-SSH-в-chroot-о
 
 ### Добавление пользователя devops для автоматического деплоя проектов  
 1. Собственно, добавляем пользователя devops:  
-`$ sudo adduser devops`  
-`$ sudo passwd devops` и задаём ему пароль.  
-2. Создаём пользователю `devops` сертификаты, добавляем публичный отдельной строкой в `~/.ssh/authorized_keys`, копируем на комп оба и добавляем приватный в секреты на гитхабе.  
+   `$ sudo adduser devops`  
+   `$ sudo passwd devops` - задаём ему пароль
+   `sudo usermod -aG sudo devops` - добавляем его в группу sudoers.  
+3. Создаём пользователю `devops` сертификаты, добавляем публичный отдельной строкой в `~/.ssh/authorized_keys`, копируем на комп оба и добавляем приватный в секреты на гитхабе.  
    Вообще, сертификаты уже созданы, но если что, то создание описано [здесь](SSH.md#сертификаты-для-ssh).  
 4. Добавляем пользователя в список разрешенных для доступа по ssh.  
 Для этого в файле `/etc/ssh/sshd_config` дописываем его в параметр `AllowUsers`  
@@ -52,8 +53,6 @@ http://forum.ispsystem.ru/showthread.php?3528-Доступ-по-SSH-в-chroot-о
    И в самый конец нужно добавить следующие строки:  
    ```
    Match user devops
-       ChrootDirectory /srv
-       ForceCommand internal-sftp
        AllowTcpForwarding no
        X11Forwarding no
    ```
