@@ -57,9 +57,9 @@ http://forum.ispsystem.ru/showthread.php?3528-Доступ-по-SSH-в-chroot-о
        X11Forwarding no
    ```
 6. Перезапускам sshd `$ sudo service ssh restart`
-7. Разрешаем пользователю devops выполнять команды sudo без пароля:
-   `sudo cp /etc/sudoers.d/010_pi-nopasswd /etc/sudoers.d/010_devops-nopasswd`
-   и в этом файле заменить имя пользователя, чтобы получилось так
+7. Разрешаем пользователю devops выполнять команды sudo без пароля:  
+   `sudo cp /etc/sudoers.d/010_pi-nopasswd /etc/sudoers.d/010_devops-nopasswd`  
+   и в этом файле заменить имя пользователя, чтобы получилось так  
    ```
    devops ALL=(ALL) NOPASSWD: ALL
    ```
