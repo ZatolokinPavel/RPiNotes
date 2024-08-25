@@ -57,12 +57,13 @@ http://forum.ispsystem.ru/showthread.php?3528-Доступ-по-SSH-в-chroot-о
        X11Forwarding no
    ```
 6. Перезапускам sshd `$ sudo service ssh restart`
-7. Разрешаем пользователю devops некоторые команды sudo без пароля:
-   `sudo visudo`
+7. Разрешаем пользователю devops выполнять команды sudo без пароля:
+   `sudo cp /etc/sudoers.d/010_pi-nopasswd /etc/sudoers.d/010_devops-nopasswd`
+   и в этом файле заменить имя пользователя, чтобы получилось так
    ```
-   devops ALL=(ALL:ALL) NOPASSWD: /bin/rsync
-   devops ALL=(ALL:ALL) NOPASSWD: /usr/sbin/service rpi_okfilm_server release
+   devops ALL=(ALL) NOPASSWD: ALL
    ```
+   Права у файла 0440, так что вчеменно придётся выставить 0640
 
 ### Изменение данных пользователя  
 `chfn [параметры] [ПОЛЬЗОВАТЕЛЬ]` - поменять параметры GECOS для пользователя  
