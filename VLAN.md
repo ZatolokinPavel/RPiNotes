@@ -24,6 +24,12 @@ Next, you'll be taken to the same screen as you saw when Editing the 'lan' inter
 Repeat the above steps for as many VLANs as you are creating.  
 Если по какому-то VLAN интерфейс роутера не должен быть доступен (гостевой VLAN), тогда устанавливаем `Protocol: Unmanaged`  
 
+WiFi  
+`Network` > `Wireless`  
+Для каждой WiFi сети `Interface Configuration` > `General Setup` > `Network` устанавливаем необходимый VLAN интерфейс.  
+Дополнительно `Interface Configuration` > `Advanced Settings` > `Interface name` можно прописать статичное имя в виде `phy0-ap0` с разными цифрами.
+Это пригодится для настройки `LED Configuration`, так как иначе имя интерфейса может меняться при перезагрузке.  
+
 ## Попытка настроить VLAN на роутере tp-link TL-WR840N v4.0 с прошивкой Padavan  
 Цель - на одном роутере развернуть несколько независимых локальных сетей.  
 Придётся все делать через консоль. В веб-интерфейсе этого всего нет.  
