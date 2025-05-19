@@ -17,7 +17,7 @@ _Заметки и инструкции по настройке Raspberry Pi_
 10. (sh) [Смонтировать дополнительный раздел](Монтирование%20диска%20или%20флешки.md)
 11. [Настроить пользователей системы.](Users.md)
 12. [Установить и настроить Samba для создания общей папки.](Samba.md)
-13. (нет) Добавить репозиторий **bullseye**. [(см. ниже)](#Добавление-репозитория-bullseye)
+13. (нет) Добавить репозиторий **Trixie**. [(см. ниже)](#Добавление-репозитория-Trixie)
 14. [Настроить часы реального времени.](RTC.md)
 15. [Настроить watchdog.](Watchdog.md)
 16. (sh) Отключить Wi-Fi и Bluetooth [(см. ниже)](#Отключение-Wi-Fi-и-Bluetooth)
@@ -156,12 +156,12 @@ https://www.raspberrypi.org/documentation/raspbian/updating.md
 `sudo apt-get install htop`  
 `sudo apt-get install ntpstat` - статус NTP, нужен для мониторилки сайта (уже не нужен)  
 
-### Добавление репозитория bullseye
+### Добавление репозитория Trixie
 Этот репозиторий нужно добавить, чтобы из него ставить самые свежие версии пакетов с помощью apt-get. Это репозиторий будущей версии Debian. А текущая версия Debian - Buster (10). Посмотреть текущую версию можно командой `lsb_release -a`.  
 Итак, в файле `/etc/apt/sources.list` уже есть строчка  
-`deb http://raspbian.raspberrypi.org/raspbian/ buster main contrib non-free rpi`  
+`deb [ arch=armhf ] http://raspbian.raspberrypi.com/raspbian/ bookworm main contrib non-free rpi`  
 нужно просто добавить ещё и эту:  
-`deb http://raspbian.raspberrypi.org/raspbian/ bullseye main contrib non-free rpi`  
+`deb [ arch=armhf ] http://raspbian.raspberrypi.com/raspbian/ trixie main contrib non-free rpi`  
 Сохранить файл и обновить информацию о пакетах  
 `$ sudo apt-get update`
 
