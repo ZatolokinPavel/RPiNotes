@@ -157,7 +157,7 @@ https://www.raspberrypi.org/documentation/raspbian/updating.md
 `sudo apt-get install ntpstat` - статус NTP, нужен для мониторилки сайта (уже не нужен)  
 
 ### Добавление репозитория Trixie
-Этот репозиторий нужно добавить, чтобы из него ставить самые свежие версии пакетов с помощью apt-get. Это репозиторий будущей версии Debian. А текущая версия Debian - Buster (10). Посмотреть текущую версию можно командой `lsb_release -a`.  
+Этот репозиторий нужно добавить, чтобы из него ставить самые свежие версии пакетов с помощью apt-get. Это репозиторий будущей версии Debian. А текущая версия Debian - Bookworm (12). Посмотреть текущую версию можно командой `lsb_release -a`.  
 Итак, в файле `/etc/apt/sources.list` уже есть строчка  
 `deb [ arch=armhf ] http://raspbian.raspberrypi.com/raspbian/ bookworm main contrib non-free rpi`  
 нужно просто добавить ещё и эту:  
