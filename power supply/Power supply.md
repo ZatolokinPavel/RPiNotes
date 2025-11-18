@@ -42,6 +42,11 @@
       <td>1 x R220 0.5W (SMD 1210)</td>
     </tr>
     <tr>
+      <td>0.73 A</td>
+      <td>0.165 Ом</td>
+      <td>2 x R330 0.5W (SMD 1210)</td>
+    </tr>
+    <tr>
       <td>1.2 A</td>
       <td>0.100 Ом</td>
       <td>1 x R100 0.5W (SMD 1210)</td>
