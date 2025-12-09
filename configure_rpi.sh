@@ -19,7 +19,7 @@ sudo sh -c "echo 'dtoverlay=i2c-rtc,ds3231' >> /boot/firmware/config.txt"
 sudo parted /dev/mmcblk0 resizepart 2 17453MB
 sudo resize2fs /dev/mmcblk0p2
 sudo parted /dev/mmcblk0 -- mkpart primary ext4 17GB -1s
-sudo mkfs.ext4 -L okdisk /dev/mmcblk0p3
+sudo mkfs.ext4 -L userdisk /dev/mmcblk0p3
 
 # update all
 sudo apt-get update
@@ -43,17 +43,33 @@ sudo -u root touch /root/.config/mc/ini
 sudo crudini --set /root/.config/mc/ini Panels navigate_with_arrows true
 sudo crudini --set /root/.config/mc/ini Midnight-Commander skin dark
 
-# partition mount
+
+# partition 1 mount
+sudo mkdir /mnt/userdisk/
+sudo sh -c "cat << EOF > /etc/systemd/system/mnt-userdisk.mount
+[Unit]
+Description=User data disk (to avoid overfill the system disk)
+[Mount]
+What=/dev/mmcblk0p3
+Where=/mnt/userdisk
+Type=ext4
+Options=defaults
+[Install]
+WantedBy=multi-user.target
+EOF"
+
+# partition 2 mount
 sudo mkdir /mnt/okdisk/
 sudo sh -c "cat << EOF > /etc/systemd/system/mnt-okdisk.mount
 [Unit]
 Description=OkFILM global share
 [Mount]
-What=/dev/mmcblk0p3
+What=/dev/disk/by-uuid/986769cb-0803-44f7-8819-8dd0ab0b5ee7
 Where=/mnt/okdisk
 Type=ext4
 Options=defaults
 DirectoryMode=0755
+TimeoutSec=5
 [Install]
 WantedBy=multi-user.target
 EOF"
@@ -65,9 +81,10 @@ Where=/mnt/okdisk
 [Install]
 WantedBy=multi-user.target
 EOF"
-sudo systemctl enable mnt-okdisk.mount
-sudo systemctl enable mnt-okdisk.automount
-sudo mount /dev/mmcblk0p3 /mnt/okdisk
+
+sudo systemctl daemon-reload
+sudo systemctl enable --now mnt-userdisk.mount
+sudo systemctl enable --now mnt-okdisk.automount
 
 # Nginx
 sudo apt-get install nginx
