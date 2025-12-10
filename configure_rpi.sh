@@ -53,7 +53,7 @@ Description=User data disk (to avoid overfill the system disk)
 What=/dev/mmcblk0p3
 Where=/mnt/userdisk
 Type=ext4
-Options=defaults
+Options=defaults,noatime
 [Install]
 WantedBy=multi-user.target
 EOF"
@@ -67,7 +67,7 @@ Description=OkFILM global share
 What=/dev/disk/by-uuid/986769cb-0803-44f7-8819-8dd0ab0b5ee7
 Where=/mnt/okdisk
 Type=ext4
-Options=defaults
+Options=defaults,noatime
 DirectoryMode=0755
 TimeoutSec=5
 [Install]
