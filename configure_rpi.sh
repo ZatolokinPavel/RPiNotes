@@ -82,9 +82,34 @@ Where=/mnt/okdisk
 WantedBy=multi-user.target
 EOF"
 
+# partition 3 mount
+sudo mkdir /mnt/photodisk/
+sudo sh -c "cat << EOF > /etc/systemd/system/mnt-photodisk.mount
+[Unit]
+Description=Photo album
+[Mount]
+What=/dev/disk/by-uuid/00000000-0000-0000-0000-000000000000
+Where=/mnt/photodisk
+Type=ext4
+Options=defaults,noatime
+DirectoryMode=0755
+TimeoutSec=5
+[Install]
+WantedBy=multi-user.target
+EOF"
+sudo sh -c "cat << EOF > /etc/systemd/system/mnt-photodisk.automount
+[Unit]
+Description=Photo album
+[Automount]
+Where=/mnt/photodisk
+[Install]
+WantedBy=multi-user.target
+EOF"
+
 sudo systemctl daemon-reload
 sudo systemctl enable --now mnt-userdisk.mount
 sudo systemctl enable --now mnt-okdisk.automount
+sudo systemctl enable --now mnt-photodisk.automount
 
 # Nginx
 sudo apt-get install nginx
