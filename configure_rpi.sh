@@ -116,7 +116,7 @@ sudo apt-get install nginx
 sudo git clone https://github.com/ZatolokinPavel/nginx.git /srv/nginx
 sudo mkdir /srv/logs
 sudo rm /etc/nginx/sites-enabled/default
-sudo ln -s /srv/nginx/nginx.cfg /etc/nginx/sites-enabled/okfilm.com.ua
+sudo ln -s /srv/nginx/nginx.conf /etc/nginx/sites-enabled/okfilm.com.ua
 sudo mkdir /etc/nginx/includes
 sudo ln -s /srv/nginx/includes/ /etc/nginx/includes/okfilm
 sudo nginx -s reload
