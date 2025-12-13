@@ -125,6 +125,7 @@ sudo nginx -s reload
 sudo apt-get install certbot
 sudo crudini --set /etc/letsencrypt/cli.ini '' authenticator webroot
 sudo crudini --set /etc/letsencrypt/cli.ini '' webroot-path '/var/www/html'
+sudo crudini --set /etc/letsencrypt/cli.ini '' allow-subset-of-names True
 sudo crudini --set /etc/letsencrypt/cli.ini '' post-hook 'nginx -s reload'
 sudo crudini --set /etc/letsencrypt/cli.ini '' text True
 sudo mkdir -p /var/www/html/.well-known/acme-challenge
