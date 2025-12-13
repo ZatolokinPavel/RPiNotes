@@ -122,13 +122,11 @@ ws = new WebSocket(scheme+host+"/back/ws/");
 
 ### Итого
 После выполнения общего [скрипта настройки](https://github.com/ZatolokinPavel/RPiNotes#Скрипт-настройки), нужно будет вручную выполнить следующее:  
-1. Зарегистрироваться  
-   `$ sudo certbot register --email me@example.com`  
-2. Как-то настроить nginx на работу без сертификатов. В каждом server убрать ssl и закоментарить пути к сертификатам.  
-3. Получить сертификат в тестовом режиме на все домены    
+1. Как-то настроить nginx на работу без сертификатов. В каждом server убрать ssl и закоментарить пути к сертификатам.  
+2. Получить сертификат в тестовом режиме на все домены. При первом вызове запросит email для регистрации.    
    ```sh
    sudo certbot certonly --dry-run --cert-name okfilm.com.ua -d okfilm.com.ua -d www.okfilm.com.ua -d cdn.okfilm.com.ua -d h.okfilm.com.ua -d f.okfilm.com.ua -d bus-pidgorodne.dp.ua -d www.bus-pidgorodne.dp.ua -d h.bus-pidgorodne.dp.ua -d f.bus-pidgorodne.dp.ua
    ```  
-4. Получить реальные сертификаты. Для этого выполнить предыдущую команду без ключа `--dry-run`.  
-5. Откатить изменения в конфиге nginx с помощью git и `sudo nginx -s reload`.  
-6. Готово.  
+3. Получить реальные сертификаты. Для этого выполнить предыдущую команду без ключа `--dry-run`.  
+4. Откатить изменения в конфиге nginx с помощью git и `sudo nginx -s reload`.  
+5. Готово.  
