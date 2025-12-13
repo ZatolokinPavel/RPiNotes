@@ -20,6 +20,7 @@ https://www.ssllabs.com/ssltest/
 ```
 authenticator = webroot
 webroot-path = /var/www/html
+allow-subset-of-names = True
 post-hook = nginx -s reload
 text = True
 ```
@@ -56,13 +57,7 @@ IMPORTANT NOTES:
 Если всё норм, тогда получаем сертификаты уже в самом деле. Для этого всего лишь нужно запустить вот эту команду. Остальные опции для неё не очень-то и нужны в нашем случае.  
 `$ sudo certbot certonly -d example.com -d www.example.com`
 
-Автоматическое обновление сертификатов уже должно быть настроено. В случае Debian, крон уже создан при установке. Это файл `/etc/cron.d/certbot`.  
-Если в конфиге не задано `allow-subset-of-names = True`, то надо немного подредактировать крон. А именно, добавить ключ `--allow-subset-of-names`, который разрешит игнорировать не существующие домены при получении сертификата. Должно получатся приблизительно так:
-```bash
-# последняя строка в /etc/cron.d/certbot
-0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(43200))' && certbot -q --allow-subset-of-names renew
-```
-Если были ещё дополнительные команды в этом кроне, то их оставляем.
+Автоматическое обновление сертификатов уже должно быть настроено. В случае Debian, при установке уже создан крон `/etc/cron.d/certbot`.  
 
 ### Проверка сертификата
 Можно проверить полученный сертификат. Как минимум, посмотреть его срок годности.  
