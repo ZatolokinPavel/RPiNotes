@@ -111,6 +111,22 @@ sudo systemctl enable --now mnt-userdisk.mount
 sudo systemctl enable --now mnt-okdisk.automount
 sudo systemctl enable --now mnt-photodisk.automount
 
+# add users
+sudo useradd --user-group --expiredate '' --create-home --shell=/bin/false okfilm
+sudo useradd --user-group --expiredate '' --create-home --shell=/bin/false devops
+sudo passwd -d okfilm
+sudo passwd -d devops
+
+# add ssh keys for okfilm
+sudo mkdir /home/okfilm/.ssh
+sudo chmod 700 /home/okfilm/.ssh
+sudo chown okfilm:okfilm /home/okfilm/.ssh
+
+# add ssh keys for devops
+sudo mkdir /home/devops/.ssh
+sudo chmod 700 /home/devops/.ssh
+sudo chown devops:devops /home/devops/.ssh
+
 # Nginx
 sudo apt-get install nginx
 sudo git clone https://github.com/ZatolokinPavel/nginx.git /srv/nginx
