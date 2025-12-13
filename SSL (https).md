@@ -56,7 +56,8 @@ IMPORTANT NOTES:
 Если всё норм, тогда получаем сертификаты уже в самом деле. Для этого всего лишь нужно запустить вот эту команду. Остальные опции для неё не очень-то и нужны в нашем случае.  
 `$ sudo certbot certonly -d example.com -d www.example.com`
 
-И ещё нужно настроить автоматическое обновление сертификатов. В случае Debian крон уже создан при установке. Это файл `/etc/cron.d/certbot`. Его только надо немного подредактировать. А именно, добавить ключ `--allow-subset-of-names`, который разрешит игнорировать не существующие домены при получении сертификата. Должно получатся приблизительно так:
+Автоматическое обновление сертификатов уже должно быть настроено. В случае Debian, крон уже создан при установке. Это файл `/etc/cron.d/certbot`.  
+Если в конфиге не задано `allow-subset-of-names = True`, то надо немного подредактировать крон. А именно, добавить ключ `--allow-subset-of-names`, который разрешит игнорировать не существующие домены при получении сертификата. Должно получатся приблизительно так:
 ```bash
 # последняя строка в /etc/cron.d/certbot
 0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(43200))' && certbot -q --allow-subset-of-names renew
@@ -128,16 +129,11 @@ ws = new WebSocket(scheme+host+"/back/ws/");
 После выполнения общего [скрипта настройки](https://github.com/ZatolokinPavel/RPiNotes#Скрипт-настройки), нужно будет вручную выполнить следующее:  
 1. Зарегистрироваться  
    `$ sudo certbot register --email me@example.com`  
-2. В крон добавить ключ `--allow-subset-of-names`  
-   ```bash
-   # последняя строка в /etc/cron.d/certbot
-   0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(43200))' && certbot -q --allow-subset-of-names renew
-   ```
-3. Как-то настроить nginx на работу без сертификатов. В каждом server убрать ssl и закоментарить пути к сертификатам.  
-4. Получить сертификат в тестовом режиме на все домены    
+2. Как-то настроить nginx на работу без сертификатов. В каждом server убрать ssl и закоментарить пути к сертификатам.  
+3. Получить сертификат в тестовом режиме на все домены    
    ```sh
-   sudo certbot certonly --dry-run --allow-subset-of-names --cert-name okfilm.com.ua -d okfilm.com.ua -d www.okfilm.com.ua -d cdn.okfilm.com.ua -d h.okfilm.com.ua -d f.okfilm.com.ua -d bus-pidgorodne.dp.ua -d www.bus-pidgorodne.dp.ua -d h.bus-pidgorodne.dp.ua -d f.bus-pidgorodne.dp.ua
+   sudo certbot certonly --dry-run --cert-name okfilm.com.ua -d okfilm.com.ua -d www.okfilm.com.ua -d cdn.okfilm.com.ua -d h.okfilm.com.ua -d f.okfilm.com.ua -d bus-pidgorodne.dp.ua -d www.bus-pidgorodne.dp.ua -d h.bus-pidgorodne.dp.ua -d f.bus-pidgorodne.dp.ua
    ```  
-5. Получить реальные сертификаты. Для этого выполнить предыдущую команду без ключа `--dry-run`.  
-6. Откатить изменения в конфиге nginx с помощью git и `sudo nginx -s reload`.  
-7. Готово.  
+4. Получить реальные сертификаты. Для этого выполнить предыдущую команду без ключа `--dry-run`.  
+5. Откатить изменения в конфиге nginx с помощью git и `sudo nginx -s reload`.  
+6. Готово.  
