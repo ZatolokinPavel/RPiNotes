@@ -117,15 +117,35 @@ sudo useradd --user-group --expiredate '' --create-home --shell=/bin/false devop
 sudo passwd -d okfilm
 sudo passwd -d devops
 
+# add ssh keys for pi
+sudo mkdir /home/pi/.ssh
+sudo chmod 700 /home/pi/.ssh
+sudo chown pi:pi /home/pi/.ssh
+echo -e "\n\n\n🔑 Вставьте публичный SSH-ключ пользователя pi (одной строкой) и нажмите Enter:"
+read -r PUBLIC_KEY
+echo "$PUBLIC_KEY" | sudo tee /home/pi/.ssh/authorized_keys
+sudo chmod 600 /home/pi/.ssh/authorized_keys
+sudo chown pi:pi /home/pi/.ssh/authorized_keys
+
 # add ssh keys for okfilm
 sudo mkdir /home/okfilm/.ssh
 sudo chmod 700 /home/okfilm/.ssh
 sudo chown okfilm:okfilm /home/okfilm/.ssh
+echo -e "\n\n\n🔑 Вставьте публичный SSH-ключ пользователя okfilm (одной строкой) и нажмите Enter:"
+read -r PUBLIC_KEY
+echo "$PUBLIC_KEY" | sudo tee /home/okfilm/.ssh/authorized_keys
+sudo chmod 600 /home/okfilm/.ssh/authorized_keys
+sudo chown okfilm:okfilm /home/okfilm/.ssh/authorized_keys
 
 # add ssh keys for devops
 sudo mkdir /home/devops/.ssh
 sudo chmod 700 /home/devops/.ssh
 sudo chown devops:devops /home/devops/.ssh
+echo -e "\n\n\n🔑 Вставьте публичный SSH-ключ пользователя devops (одной строкой) и нажмите Enter:"
+read -r PUBLIC_KEY
+echo "$PUBLIC_KEY" | sudo tee /home/devops/.ssh/authorized_keys
+sudo chmod 600 /home/devops/.ssh/authorized_keys
+sudo chown devops:devops /home/devops/.ssh/authorized_keys
 
 # Nginx
 sudo apt-get install nginx
