@@ -44,7 +44,7 @@ sudo crudini --set /root/.config/mc/ini Panels navigate_with_arrows true
 sudo crudini --set /root/.config/mc/ini Midnight-Commander skin dark
 
 
-# partition 1 mount
+# partition 1 mount unit
 sudo mkdir /mnt/userdisk/
 sudo sh -c "cat << EOF > /etc/systemd/system/mnt-userdisk.mount
 [Unit]
@@ -58,7 +58,7 @@ Options=defaults,noatime
 WantedBy=multi-user.target
 EOF"
 
-# partition 2 mount
+# partition 2 mount unit
 sudo mkdir /mnt/okdisk/
 sudo sh -c "cat << EOF > /etc/systemd/system/mnt-okdisk.mount
 [Unit]
@@ -67,22 +67,14 @@ Description=OkFILM global share
 What=/dev/disk/by-uuid/986769cb-0803-44f7-8819-8dd0ab0b5ee7
 Where=/mnt/okdisk
 Type=ext4
-Options=defaults,noatime
+Options=defaults,noatime,nofail
 DirectoryMode=0755
 TimeoutSec=5
 [Install]
 WantedBy=multi-user.target
 EOF"
-sudo sh -c "cat << EOF > /etc/systemd/system/mnt-okdisk.automount
-[Unit]
-Description=OkFILM global share
-[Automount]
-Where=/mnt/okdisk
-[Install]
-WantedBy=multi-user.target
-EOF"
 
-# partition 3 mount
+# partition 3 mount unit
 sudo mkdir /mnt/photodisk/
 sudo sh -c "cat << EOF > /etc/systemd/system/mnt-photodisk.mount
 [Unit]
@@ -91,25 +83,23 @@ Description=Photo album
 What=/dev/disk/by-uuid/00000000-0000-0000-0000-000000000000
 Where=/mnt/photodisk
 Type=ext4
-Options=defaults,noatime
+Options=defaults,noatime,nofail
 DirectoryMode=0755
 TimeoutSec=5
 [Install]
 WantedBy=multi-user.target
 EOF"
-sudo sh -c "cat << EOF > /etc/systemd/system/mnt-photodisk.automount
-[Unit]
-Description=Photo album
-[Automount]
-Where=/mnt/photodisk
-[Install]
-WantedBy=multi-user.target
-EOF"
 
+# fallback directory on system sd-card if the USB flash drive is not connected
+sudo mkdir /mnt/userdisk/shared-global
+sudo chmod 777 /mnt/userdisk/shared-global
+sudo ln -s /mnt/userdisk/shared-global/ /mnt/okdisk/shared-global
+
+# enable mount
 sudo systemctl daemon-reload
 sudo systemctl enable --now mnt-userdisk.mount
-sudo systemctl enable --now mnt-okdisk.automount
-sudo systemctl enable --now mnt-photodisk.automount
+sudo systemctl enable --now mnt-okdisk.mount
+sudo systemctl enable --now mnt-photodisk.mount
 
 # add users
 sudo useradd --user-group --expiredate '' --create-home --shell=/bin/false okfilm
