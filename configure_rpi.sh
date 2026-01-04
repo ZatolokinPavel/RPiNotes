@@ -106,6 +106,8 @@ sudo useradd --user-group --expiredate '' --create-home --shell=/bin/false okfil
 sudo useradd --user-group --expiredate '' --create-home --shell=/bin/false devops
 sudo passwd -d okfilm
 sudo passwd -d devops
+echo "devops ALL=(ALL) NOPASSWD: /srv/rpi_okfilm_server/deploy.sh" | sudo tee /etc/sudoers.d/devops-rights
+sudo chmod 0440 /etc/sudoers.d/devops-rights
 
 # add ssh keys for pi
 sudo mkdir /home/pi/.ssh
