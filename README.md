@@ -31,7 +31,7 @@ _Заметки и инструкции по настройке Raspberry Pi_
 24. (sh) [Установить Erlang.](Erlang.md)
 25. [Скачать и запустить rpi_okfilm_server.](https://github.com/ZatolokinPavel/rpi_okfilm_server)
 26. [Скачать и запустить bus_pidgorodne.](https://github.com/ZatolokinPavel/bus_pidgorodne)
-27. [Добавить скрипт для сжатия фоток.](Resize%20images.md)
+27. (sh) [Добавить скрипт для сжатия фоток.](Resize%20images.md)
 28. [Поднять FTP сервер](FTP.md) для загрузки файлов в общую папку.
 29. [Настроить систему проксирования на основе Tor.](TOR%20proxy.md)
 30. При желании, [включить порт i2c0 на доп. клеммнике P5](Port%20I2C-0.md)
