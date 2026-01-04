@@ -163,7 +163,14 @@ sudo mkdir /mnt/okdisk/shared-global
 sudo chmod 777 /mnt/okdisk/shared-global
 sudo ln -s /mnt/okdisk/shared-global/ /srv/shared-global
 
-# erlang 23.2.6
+# resize images by user "okfilm"
+sudo apt-get install imagemagick
+RESIZE_SCRIPT="/srv/okfilm_2018/utilities/resize_shared_images.sh"
+RESIZE_JOB="*/5 * * * * okfilm test -x $RESIZE_SCRIPT && $RESIZE_SCRIPT"
+echo "$RESIZE_JOB" | sudo tee /etc/cron.d/resize_shared_images > /dev/null
+sudo chmod 644 /etc/cron.d/resize_shared_images
+
+# erlang 27.3.4.1
 sudo apt-get install erlang
 #wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
 #sudo dpkg -i erlang-solutions_2.0_all.deb
