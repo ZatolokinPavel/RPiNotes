@@ -103,7 +103,7 @@ sudo systemctl enable --now mnt-photodisk.mount
 
 # add users
 sudo useradd --user-group --expiredate '' --create-home --shell=/bin/false okfilm
-sudo useradd --user-group --expiredate '' --create-home --shell=/bin/false devops
+sudo useradd --user-group --expiredate '' --create-home devops
 sudo passwd -d okfilm
 sudo passwd -d devops
 echo "devops ALL=(ALL) NOPASSWD: /srv/rpi_okfilm_server/deploy.sh" | sudo tee /etc/sudoers.d/devops-rights
